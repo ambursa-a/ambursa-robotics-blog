@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Designing a real-time SLAM stack on embedded Linux — latency budgets, IPC, and RTOS partitioning.">
+  <title>Designing a Real-Time SLAM Stack — YOURNAME.DEV</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* Post-specific prose styles */
+    .post-layout { max-width: 680px; padding-block: var(--space-2xl); }
+    .post-header { margin-bottom: var(--space-xl); padding-bottom: var(--space-xl); border-bottom: 1px solid var(--color-border); }
+    .post-header h1 { font-size: var(--text-2xl); margin-bottom: var(--space-md); }
+    .post-body h2 { font-size: var(--text-lg); margin-top: var(--space-xl); margin-bottom: var(--space-md); }
+    .post-body p { color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.75; }
+    .post-body code { font-family: var(--font-mono); font-size: 0.9em; background: var(--color-bg-code); padding: 0.15em 0.4em; border-radius: 3px; }
+    .back-link { font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">YOURNAME.DEV <span>// ROBOTICS &amp; SYSTEMS</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../index.html" class="is-active">Logs</a></li>
+          <li><a href="../index.html#open-source">Open Source</a></li>
+          <li><a href="../index.html#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container post-layout">
+    <p class="back-link"><a href="../index.html">← Back to Logs</a></p>
+
+    <article>
+      <header class="post-header">
+        <h1>Designing a Real-Time SLAM Stack on Embedded Linux</h1>
+        <p class="post-meta">March 14, 2026</p>
+      </header>
+
+      <div class="post-body">
+        <p>
+          When you move SLAM from a development workstation to an embedded target, the
+          conversation shifts from algorithm accuracy to timing guarantees. Every sensor
+          callback, every IPC hop, and every memory allocation becomes a line item in your
+          latency budget.
+        </p>
+
+        <h2>Partitioning the Stack</h2>
+        <p>
+          I split the navigation stack into three RTOS tasks: sensor acquisition at 100 Hz,
+          fusion at 100 Hz, and planning at 20 Hz. The Linux side handles logging, diagnostics,
+          and non-critical visualization over a shared-memory ring buffer.
+        </p>
+
+        <h2>IPC That Doesn't Surprise You</h2>
+        <p>
+          Message queues work well for state snapshots, but only if you enforce fixed-size
+          messages and pre-allocated pools. Dynamic allocation inside the fusion loop was
+          the source of a 3 ms jitter spike that took a week to trace.
+        </p>
+
+        <p>
+          The full architecture diagram and firmware repo are linked from the
+          <a href="../projects.html">Projects page</a>.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copyright">&copy; 2026 yourname.dev. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/feed.xml">RSS Feed</a>
+        <a href="mailto:hello@yourname.dev">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

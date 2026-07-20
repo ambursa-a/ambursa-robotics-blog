@@ -1,0 +1,58 @@
+/**
+ * Design tokens — dark developer-blog theme
+ * Matches the YOURNAME.DEV concept mockups
+ */
+:root {
+  /* Surfaces */
+  --color-bg: #111111;
+  --color-bg-elevated: #1a1a1a;
+  --color-bg-card: #161616;
+  --color-bg-code: #0d0d0d;
+
+  /* Text */
+  --color-text: #e8e8e8;
+  --color-text-muted: #888888;
+  --color-text-subtle: #666666;
+  --color-text-heading: #ffffff;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(255, 255, 255, 0.2);
+
+  /* Accents */
+  --color-accent-purple: #7c3aed;
+  --color-accent-purple-end: #c026d3;
+  --color-accent-cyan: #38bdf8;
+  --color-accent-green: #22c55e;
+  --color-link: #a3a3a3;
+  --color-link-hover: #ffffff;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Layout */
+  --max-width: 1100px;
+  --sidebar-width: 280px;
+  --header-height: 56px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ambursa-dev",
+  "version": "1.0.0",
+  "description": "Personal blog with GitHub OAuth contribution heatmap",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  }
+}
