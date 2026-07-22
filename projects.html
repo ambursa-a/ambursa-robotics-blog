@@ -187,6 +187,40 @@
       </div>
     </footer>
 
+    <!-- ═══ NEWSLETTER SIGNUP MODAL ═══ -->
+    <div id="newsletter-modal" class="newsletter-modal" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-title" aria-describedby="newsletter-modal-desc" aria-hidden="true">
+      <div class="newsletter-modal-overlay" data-dismiss="modal" tabindex="-1"></div>
+      <div class="newsletter-modal-card">
+        <button type="button" class="newsletter-modal-close" data-dismiss="modal" aria-label="Close newsletter signup modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="newsletter-modal-header">
+          <span class="newsletter-modal-badge"><span class="badge-dot"></span> Engineering Logs</span>
+          <h2 id="newsletter-modal-title" class="newsletter-modal-title">Subscribe to Technical Updates</h2>
+          <p id="newsletter-modal-desc" class="newsletter-modal-desc">
+            Get practical logs on EV powertrain firmware, CAN bus scheduling, and RTOS architecture directly in your inbox.
+          </p>
+        </div>
+        <form id="newsletter-form" class="newsletter-modal-form" novalidate>
+          <div class="newsletter-modal-input-group">
+            <input type="email" id="newsletter-email" name="email" class="newsletter-modal-input" placeholder="engineer@domain.com" required aria-label="Email address" autocomplete="email">
+            <button type="submit" id="newsletter-submit" class="newsletter-modal-submit">
+              Subscribe
+            </button>
+          </div>
+          <p id="newsletter-form-feedback" class="newsletter-modal-feedback" aria-live="polite"></p>
+        </form>
+        <div class="newsletter-modal-footer">
+          <button type="button" class="newsletter-modal-dismiss-btn" data-dismiss="modal">
+            No thanks, I'll check back manually
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 
