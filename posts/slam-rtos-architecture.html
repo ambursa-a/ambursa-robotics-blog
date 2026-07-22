@@ -12,6 +12,17 @@
 
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme') || 'system';
+      let applied = saved;
+      if (saved === 'system') {
+        applied = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', applied);
+      document.documentElement.setAttribute('data-theme-preference', saved);
+    })();
+  </script>
   <style>
     /* Post-specific prose styles */
     .post-layout { max-width: 680px; padding-block: var(--space-2xl); }
@@ -39,6 +50,18 @@
           <li><a href="../index.html#about">About</a></li>
         </ul>
       </nav>
+
+      <div class="theme-switcher" role="radiogroup" aria-label="Theme preference">
+        <button type="button" class="theme-btn" data-theme-val="light" title="Light mode" aria-label="Light mode">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button type="button" class="theme-btn" data-theme-val="dark" title="Dark mode" aria-label="Dark mode">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button type="button" class="theme-btn" data-theme-val="system" title="System preference" aria-label="System preference">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -108,7 +131,7 @@
           Get practical logs on EV powertrain firmware, CAN bus scheduling, and RTOS architecture directly in your inbox.
         </p>
       </div>
-      <form id="newsletter-form" class="newsletter-modal-form" novalidate>
+      <form id="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/ambursa" method="post" target="popupwindow" class="newsletter-modal-form" novalidate>
         <div class="newsletter-modal-input-group">
           <input type="email" id="newsletter-email" name="email" class="newsletter-modal-input" placeholder="engineer@domain.com" required aria-label="Email address" autocomplete="email">
           <button type="submit" id="newsletter-submit" class="newsletter-modal-submit">

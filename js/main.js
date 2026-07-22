@@ -227,9 +227,9 @@
       }
     });
 
-    // Form Submission Handling
+    // Form Submission Handling for Buttondown Integration
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const emailValue = emailInput ? emailInput.value.trim() : '';
 
@@ -242,19 +242,101 @@
           return;
         }
 
-        // Display success feedback
-        feedback.textContent = "✓ Subscribed! You're on the list.";
-        feedback.className = 'newsletter-modal-feedback is-success';
+        const submitBtn = form.querySelector('#newsletter-submit');
+        if (submitBtn) submitBtn.disabled = true;
 
-        // Record subscription in localStorage
-        localStorage.setItem(STORAGE_KEY, 'subscribed');
+        feedback.textContent = 'Subscribing...';
+        feedback.className = 'newsletter-modal-feedback';
 
-        // Dismiss modal after short delay to show confirmation
-        setTimeout(() => {
-          closeModal();
-        }, 1400);
+        // Buttondown username (defaults to 'ambursa', can be customized via window.BUTTONDOWN_USERNAME)
+        const username = window.BUTTONDOWN_USERNAME || 'ambursa';
+        const buttondownUrl = `https://buttondown.com/api/emails/embed-subscribe/${username}`;
+
+        try {
+          const formData = new FormData();
+          formData.append('email', emailValue);
+          formData.append('tag', 'website-popup');
+
+          const response = await fetch(buttondownUrl, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' // Buttondown embed endpoint accepts cross-origin form posts
+          });
+
+          // Display success feedback
+          feedback.textContent = "✓ Subscribed! Please check your inbox to confirm.";
+          feedback.className = 'newsletter-modal-feedback is-success';
+
+          // Record subscription in localStorage
+          localStorage.setItem(STORAGE_KEY, 'subscribed');
+
+          // Dismiss modal after short delay to show confirmation
+          setTimeout(() => {
+            closeModal();
+          }, 2000);
+        } catch (err) {
+          console.error('Buttondown signup error:', err);
+          feedback.textContent = 'Unable to subscribe right now. Please try again.';
+          feedback.className = 'newsletter-modal-feedback is-error';
+          if (submitBtn) submitBtn.disabled = false;
+        }
       });
     }
   })();
+
+  /* ─── Theme Switcher (Dark, Light, System) ───────────────── */
+
+  (function initThemeSwitcher() {
+    const MEDIA_QUERY = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function getSavedPreference() {
+      return localStorage.getItem('theme') || 'system';
+    }
+
+    function applyTheme(preference) {
+      let effectiveTheme = preference;
+      if (preference === 'system') {
+        effectiveTheme = MEDIA_QUERY.matches ? 'dark' : 'light';
+      }
+
+      document.documentElement.setAttribute('data-theme', effectiveTheme);
+      document.documentElement.setAttribute('data-theme-preference', preference);
+
+      // Update button state
+      document.querySelectorAll('.theme-btn').forEach((btn) => {
+        const val = btn.getAttribute('data-theme-val');
+        const isActive = val === preference;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function setTheme(preference) {
+      localStorage.setItem('theme', preference);
+      applyTheme(preference);
+    }
+
+    // React dynamically to OS system theme changes when set to 'system'
+    MEDIA_QUERY.addEventListener('change', () => {
+      if (getSavedPreference() === 'system') {
+        applyTheme('system');
+      }
+    });
+
+    // Apply on DOM load
+    applyTheme(getSavedPreference());
+
+    // Event delegation for theme switcher buttons
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.theme-btn');
+      if (btn) {
+        const val = btn.getAttribute('data-theme-val');
+        if (val) {
+          setTheme(val);
+        }
+      }
+    });
+  })();
 })();
+
 

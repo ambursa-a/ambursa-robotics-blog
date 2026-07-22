@@ -1,8 +1,9 @@
 /**
- * Design tokens — dark developer-blog theme
- * Matches the YOURNAME.DEV concept mockups
+ * Design tokens — developer blog theme (Dark & Light modes supported)
  */
-:root {
+
+:root,
+[data-theme="dark"] {
   /* Surfaces */
   --color-bg: #111111;
   --color-bg-elevated: #1a1a1a;
@@ -56,3 +57,30 @@
   /* Transitions */
   --transition-fast: 150ms ease;
 }
+
+[data-theme="light"] {
+  /* Surfaces */
+  --color-bg: #f8fafc;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-code: #f1f5f9;
+
+  /* Text */
+  --color-text: #334155;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+  --color-text-heading: #0f172a;
+
+  /* Borders */
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-border-strong: rgba(15, 23, 42, 0.22);
+
+  /* Accents */
+  --color-accent-purple: #6d28d9;
+  --color-accent-purple-end: #a21caf;
+  --color-accent-cyan: #0284c7;
+  --color-accent-green: #16a34a;
+  --color-link: #475569;
+  --color-link-hover: #0f172a;
+}
+

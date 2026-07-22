@@ -297,16 +297,19 @@ h1, h2, h3, h4 {
 
 .contribution-heatmap {
   display: grid;
-  grid-template-columns: repeat(52, 1fr);
+  grid-template-columns: repeat(52, minmax(10px, 1fr));
+  grid-template-rows: repeat(7, 10px);
+  grid-auto-flow: column;
   gap: 3px;
   margin-bottom: var(--space-lg);
   overflow-x: auto;
-  padding-bottom: var(--space-xs);
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-sm);
 }
 
 .heatmap-cell {
-  aspect-ratio: 1;
-  min-width: 10px;
+  width: 100%;
+  height: 10px;
   border-radius: 2px;
   background-color: rgba(34, 197, 94, 0.08);
 }
@@ -666,8 +669,24 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 640px) {
+  .site-logo span {
+    display: none;
+  }
+
+  .header-inner {
+    gap: var(--space-xs);
+    justify-content: space-between;
+  }
+
   .nav-toggle {
     display: flex;
+    order: 3;
+  }
+
+  .theme-switcher {
+    order: 2;
+    margin-left: auto;
+    margin-right: var(--space-xs);
   }
 
   .main-nav {
@@ -675,10 +694,12 @@ h1, h2, h3, h4 {
     top: var(--header-height);
     left: 0;
     right: 0;
-    background-color: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border-strong);
     padding: var(--space-md) var(--space-lg);
     display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    z-index: 99;
   }
 
   .main-nav.is-open {
@@ -699,6 +720,22 @@ h1, h2, h3, h4 {
     position: relative;
   }
 
+  .contribution-heatmap {
+    display: grid;
+    grid-template-columns: repeat(52, 10px);
+    grid-template-rows: repeat(7, 10px);
+    grid-auto-flow: column;
+    gap: 3px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-sm);
+  }
+
+  .heatmap-cell {
+    width: 10px;
+    height: 10px;
+  }
+
   .support-buttons {
     grid-template-columns: 1fr;
   }
@@ -708,6 +745,7 @@ h1, h2, h3, h4 {
     align-items: flex-start;
   }
 }
+
 
 /* ─── Accessibility ────────────────────────────────────────── */
 
@@ -932,4 +970,41 @@ h1, h2, h3, h4 {
 .newsletter-modal-dismiss-btn:hover {
   color: var(--color-text-muted);
 }
+
+/* ─── Theme Switcher Component ─────────────────────────────── */
+
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.theme-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-subtle);
+  padding: 5px 7px;
+  border-radius: calc(var(--radius-sm) - 1px);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.theme-btn:hover {
+  color: var(--color-text-heading);
+  background-color: rgba(125, 125, 125, 0.15);
+}
+
+.theme-btn.is-active {
+  color: var(--color-accent-cyan);
+  background-color: var(--color-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 
