@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal blog and engineering logs — robotics, systems, and open source.">
-  <title>AMBURSA — EV POWERTRAIN &amp; EMBEDDED SYSTEMS</title>
+  <meta name="description"
+    content="Red Team Security Analyst & Threat Researcher — offensive security, breach analysis, and exploit research.">
+  <title>AMBURSA // RED TEAM &amp; ADVERSARY RESEARCH</title>
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +37,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
-        AMBURSA <span>// EV POWERTRAIN &amp; EMBEDDEDSYSTEMS</span>
+        AMBURSA <span>// RED TEAM &amp; ADVERSARY RESEARCH</span>
       </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -45,9 +46,10 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="projects.html">Projects</a></li>
+          <!-- Commented out until projects/exploits are ready -->
+          <!-- <li><a href="projects.html">Exploits</a></li> -->
           <li>
-            <a href="index.html" class="is-active">Logs</a>
+            <a href="index.html" class="is-active">Breach Analysis</a>
           </li>
           <li><a href="#about">About</a></li>
         </ul>
@@ -90,114 +92,85 @@
   <!-- ═══ MAIN CONTENT ═══ -->
   <div class="container page-layout">
 
-    <!-- Primary column: blog, contributions, about -->
+    <!-- Primary column: breach analysis, about -->
     <main class="page-main">
 
-      <!-- Latest Logs (Blog) — featured post + archive list -->
+      <!-- Latest Logs / Breach Analysis -->
       <section class="content-section" id="logs" aria-labelledby="logs-heading">
-        <h2 class="section-title section-title--large" id="logs-heading">Latest Logs (Blog)</h2>
+        <h2 class="section-title section-title--large" id="logs-heading">Breach Analysis &amp; Threat Reports</h2>
 
         <article class="blog-featured">
-          <h3><a href="posts/slam-rtos-architecture.html">Designing a Deterministic Battery Management System (BMS)
-              Stack on Embedded Linux & FreeRTOS</a></h3>
+          <h3><a href="posts/supply-chain-breakdown.html">Deconstructing the XXZip Supply Chain Incident: Anatomy of a
+              Poisoned Build Pipeline</a></h3>
           <p class="post-meta">March 14, 2026</p>
           <p class="post-excerpt">
-            A walkthrough of partitioning high-voltage cell monitoring, State-of-Charge (SoC) estimation,
-            and thermal runaway safeguards across an RTOS boundary, including CAN-FD latency budgets,
-            isolation monitoring, and safety-critical fail-safes.
+            An offensive teardown of the published incident report. Analyzing how threat actors compromised CI/CD
+            runners, injected stealthy binary backdoors into upstream dependencies, and evaded source-code review
+            mechanisms.
           </p>
-          <a href="posts/slam-rtos-architecture.html" class="read-more">Read More</a>
+          <a href="posts/supply-chain-breakdown.html" class="read-more">Read More</a>
         </article>
 
         <ul class="post-list">
           <li class="post-list-item">
-            <h4><a href="posts/lidar-calibration.html">Field Calibration for Traction Inverters and Resolver Sensors
-                Without a Chassis Dyno</a>
+            <h4><a href="posts/cisa-advisory-cloud.html">Dissecting CISA Advisory AA26-042A: Cloud Identity Takeover
+                Mechanics</a>
             </h4>
             <p class="post-meta">February 28, 2026</p>
-            <p class="post-excerpt">A practical, field-tested workflow for zeroing rotor position sensors,
-              auto-tuning Field-Oriented Control (FOC) loops, and calibrating phase current sensors on custom EV builds.
+            <p class="post-excerpt">Breaking down the adversary TTPs detailed in recent emergency threat advisories.
+              Replicating the OAuth application consent abuse, pass-the-cookie vectors, and privilege escalation paths
+              in isolated lab environments.
             </p>
           </li>
           <li class="post-list-item">
-            <h4><a href="posts/rag-robotics-docs.html">Indexing High-Voltage Wiring Diagrams and DTCs for Fast EV
-                Diagnostic Search</a>
+            <h4><a href="posts/scattered-spider-ad.html">Post-Mortem Analysis: How Scattered-Spider-Style Actors
+                Compromised Enterprise AD in 4 Hours</a>
             </h4>
             <p class="post-meta">January 19, 2026</p>
-            <p class="post-excerpt">Lessons from indexing 500+ pages of OEM service manuals,
-              SAE J1939/UDS diagnostic codes, and schematic diagrams to
-              accelerate shop-floor troubleshooting and repair workflows.</p>
+            <p class="post-excerpt">Reviewing public incident response reports from recent breach disclosures. A
+              technical breakdown of initial access via helpdesk vishing, session token extraction, NTLM relaying, and
+              rapid domain admin takeover.</p>
           </li>
           <li class="post-list-item">
-            <h4><a href="posts/motor-driver-firmware.html">Rewriting On-Board Charger Firmware for Deterministic CAN Bus
-                Scheduling</a></h4>
+            <h4><a href="posts/edge-gateway-rce.html">Analyzing the Edge Gateway RCE Breach: Root Cause &amp; Exploit
+                Chain</a></h4>
             <p class="post-meta">December 3, 2025</p>
-            <p class="post-excerpt">Shifting high-voltage charging telemetry from bursty
-              requests to time-triggered frames across the VCU, OBC, and BMS,
-              delivering a 12× latency reduction during DC fast-charging state transitions.</p>
+            <p class="post-excerpt">Examining vendor vulnerability disclosures and public post-mortems. How
+              unauthenticated heap overflows in perimeter appliances were weaponized in the wild before patch
+              deployment.</p>
           </li>
         </ul>
       </section>
 
-      <!--
-<section class="content-section" id="open-source" aria-labelledby="oss-heading">
-  <h2 class="section-title section-title--large" id="oss-heading">Open Source Contributions</h2>
-
-  <div class="contribution-heatmap" role="img" aria-label="GitHub contribution activity over the past year">
-  </div>
-
-  <div class="repo-grid">
-    <div>
-      <h5>Contribution</h5>
-      <ul class="repo-list">
-        <li><a href="#">nav-stack-rtos</a></li>
-        <li><a href="#">lidar-calib-toolkit</a></li>
-        <li><a href="#">can-scheduler-fw</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>GitHub</h5>
-      <ul class="repo-list">
-        <li><a href="#">ros2-perception-utils</a></li>
-        <li><a href="#">embedded-cpp-patterns</a></li>
-        <li><a href="#">robot-docs-rag</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
--->
-
-      <!-- About the Engineer -->
+      <!-- About the Analyst -->
       <section class="content-section" id="about" aria-labelledby="about-heading">
-        <h2 class="section-title section-title--large" id="about-heading">About the Engineer</h2>
+        <h2 class="section-title section-title--large" id="about-heading">About the Analyst</h2>
 
         <p class="about-text">
-          Software & Electrical/Electronics Engineer focused on EV powertrain integration,
-          high-voltage battery management systems (BMS), custom traction inverter firmware,
-          and hands-on vehicle diagnostic & repair infrastructure. I bridge the gap between
-          embedded software architecture and real-world hardware, from bench-testing firmware
-          to troubleshooting high-voltage system faults on the shop floor.
+          Red Team Security Analyst and Threat Researcher focused on offensive security, adversary emulation, and
+          technical breach analysis. I break down complex incident reports, threat intelligence disclosures, and
+          zero-day post-mortems into actionable offensive insights, exploit mechanics, and defensive detection gaps.
         </p>
 
         <h3 class="section-title">Specific Expertise</h3>
         <ul class="expertise-list">
-          <li>High-Voltage Battery Management Systems (BMS) and cell balancing software</li>
-          <li>Traction inverter controls (FOC) and resolver / current-sensor calibration</li>
-          <li>VCU and embedded C/C++ firmware on RTOS and Linux environments</li>
-          <li>CAN / CAN-FD bus diagnostics, UDS (ISO 14229), and fault troubleshooting</li>
-          <li>EV wiring harness design, high-voltage safety, and physical vehicle repair</li>
+          <li>Threat Intelligence &amp; Incident Report Teardowns (CISA, Mandiant, CrowdStrike advisories)</li>
+          <li>Adversary TTP Analysis &amp; MITRE ATT&amp;CK Mapping</li>
+          <li>Supply Chain &amp; CI/CD Pipeline Attack Path Deconstruction</li>
+          <li>Identity &amp; Cloud Compromise Analysis (Entra ID, Okta, OAuth abuse)</li>
+          <li>Root Cause &amp; Vulnerability Exploit Analysis</li>
         </ul>
       </section>
     </main>
 
-    <!-- Sidebar: support + consulting widgets -->
+    <!-- Sidebar: research support + consulting widgets -->
     <aside class="page-sidebar" aria-label="Sidebar">
 
-      <!-- Card 1: Hardware & Lab Support -->
+      <!-- Card 1: Research & Lab Support -->
       <div class="card" style="text-align: center;">
-        <h3 class="widget-title">Hardware &amp; Lab Support</h3>
+        <h3 class="widget-title">Research &amp; Lab Support</h3>
         <div class="support-buttons" style="justify-content: center; display: flex;">
-          <a href="https://patreon.com/ambursa" class="btn-support btn-support--kofi" target="_blank"
+          <a href="https://patreon.com/ambursaa" class="btn-support btn-support--kofi" target="_blank"
             rel="noopener noreferrer">
             <!-- Patreon SVG Icon -->
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right: 8px;">
@@ -206,76 +179,79 @@
             Support on Patreon
           </a>
         </div>
-        <p class="widget-note">Help fund high-voltage test gear, BMS microcontrollers, and EV bench equipment.</p>
+        <p class="widget-note">Help fund zero-day research labs, dedicated target infrastructure, and open-source
+          offensive security tools.</p>
       </div>
 
-      <!-- Card 2: EV Diagnostics & Powertrain Consulting -->
+      <!-- Card 2: Consulting / Engagement 
       <div class="card" style="text-align: center;">
-        <h3 class="widget-title">EV Diagnostics &amp; Powertrain Audits</h3>
+        <h3 class="widget-title">Red Team Assessment &amp; Breach Simulation</h3>
         <p class="consulting-price">$500 MINIMUM ENGAGEMENT</p>
-        <p class="consulting-detail">(e.g., Custom BMS Firmware, Inverter Tuning, High-Voltage Fault Diagnosis,
-          Telemetry Integration)</p>
-        <p class="consulting-cta">Let's solve high-value problems. <br><a href="mailto:hello@ambursa.com">Email Me</a>
+        <p class="consulting-detail">(e.g., Adversary Emulation, Active Directory Security Audits, EDR Bypass Testing,
+          Initial Access Vector Assessment)</p>
+        <p class="consulting-cta">Let's expose vulnerabilities before adversaries do. <br><a
+            href="mailto:hello@ambursa.com">Email Me</a>
         </p>
-      </div>
+      </div> -->
 
     </aside>
+  </div>
 
-    <!-- ═══ SITE FOOTER ═══ -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p class="footer-copyright">&copy; 2026 ambursa. All rights reserved.</p>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#">Sitemap</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-          <a href="/feed.xml">RSS Feed</a>
-          <a href="mailto:hello@ambursa.com">Contact</a>
-        </nav>
+  <!-- ═══ SITE FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copyright">&copy; 2026 ambursa. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="/feed.xml">RSS Feed</a>
+        <a href="mailto:hello@ambursa.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ═══ NEWSLETTER SIGNUP MODAL ═══ -->
+  <div id="newsletter-modal" class="newsletter-modal" role="dialog" aria-modal="true"
+    aria-labelledby="newsletter-modal-title" aria-describedby="newsletter-modal-desc" aria-hidden="true">
+    <div class="newsletter-modal-overlay" data-dismiss="modal" tabindex="-1"></div>
+    <div class="newsletter-modal-card">
+      <button type="button" class="newsletter-modal-close" data-dismiss="modal"
+        aria-label="Close newsletter signup modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="newsletter-modal-header">
+        <span class="newsletter-modal-badge"><span class="badge-dot"></span> Threat Intelligence Logs</span>
+        <h2 id="newsletter-modal-title" class="newsletter-modal-title">Subscribe to Threat Research Updates</h2>
+        <p id="newsletter-modal-desc" class="newsletter-modal-desc">
+          Get offensive breakdowns of modern enterprise breaches, zero-day root cause analyses, and adversary TTP
+          teardowns directly in your inbox.
+        </p>
       </div>
-    </footer>
-
-    <!-- ═══ NEWSLETTER SIGNUP MODAL ═══ -->
-    <div id="newsletter-modal" class="newsletter-modal" role="dialog" aria-modal="true"
-      aria-labelledby="newsletter-modal-title" aria-describedby="newsletter-modal-desc" aria-hidden="true">
-      <div class="newsletter-modal-overlay" data-dismiss="modal" tabindex="-1"></div>
-      <div class="newsletter-modal-card">
-        <button type="button" class="newsletter-modal-close" data-dismiss="modal"
-          aria-label="Close newsletter signup modal">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-        <div class="newsletter-modal-header">
-          <span class="newsletter-modal-badge"><span class="badge-dot"></span> Engineering Logs</span>
-          <h2 id="newsletter-modal-title" class="newsletter-modal-title">Subscribe to Technical Updates</h2>
-          <p id="newsletter-modal-desc" class="newsletter-modal-desc">
-            Get practical logs on EV powertrain firmware, CAN bus scheduling, and RTOS architecture directly in your
-            inbox.
-          </p>
-        </div>
-        <form id="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/ambursa" method="post"
-          target="popupwindow" class="newsletter-modal-form" novalidate>
-          <div class="newsletter-modal-input-group">
-            <input type="email" id="newsletter-email" name="email" class="newsletter-modal-input"
-              placeholder="engineer@domain.com" required aria-label="Email address" autocomplete="email">
-            <button type="submit" id="newsletter-submit" class="newsletter-modal-submit">
-              Subscribe
-            </button>
-          </div>
-          <p id="newsletter-form-feedback" class="newsletter-modal-feedback" aria-live="polite"></p>
-        </form>
-        <div class="newsletter-modal-footer">
-          <button type="button" class="newsletter-modal-dismiss-btn" data-dismiss="modal">
-            No thanks, I'll check back manually
+      <form id="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/ambursa" method="post"
+        target="popupwindow" class="newsletter-modal-form" novalidate>
+        <div class="newsletter-modal-input-group">
+          <input type="email" id="newsletter-email" name="email" class="newsletter-modal-input"
+            placeholder="analyst@domain.com" required aria-label="Email address" autocomplete="email">
+          <button type="submit" id="newsletter-submit" class="newsletter-modal-submit">
+            Subscribe
           </button>
         </div>
+        <p id="newsletter-form-feedback" class="newsletter-modal-feedback" aria-live="polite"></p>
+      </form>
+      <div class="newsletter-modal-footer">
+        <button type="button" class="newsletter-modal-dismiss-btn" data-dismiss="modal">
+          No thanks, I'll check back manually
+        </button>
       </div>
     </div>
+  </div>
 
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

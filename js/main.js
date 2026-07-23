@@ -250,7 +250,7 @@
 
         // Buttondown username (defaults to 'ambursa', can be customized via window.BUTTONDOWN_USERNAME)
         const username = window.BUTTONDOWN_USERNAME || 'ambursa';
-        const buttondownUrl = `https://buttondown.com/api/emails/embed-subscribe/${username}`;
+        const buttondownUrl = `https://buttondown.com/api/emails/embed-subscribe/${ambursa}`;
 
         try {
           const formData = new FormData();
