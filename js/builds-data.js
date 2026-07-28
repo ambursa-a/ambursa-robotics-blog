@@ -1,0 +1,603 @@
+/**
+ * Custom PC Builds - Component Catalog & Pre-made Build Templates
+ * Loaded globally as window.PC_BUILD_DATA
+ */
+
+(function () {
+  'use strict';
+
+  const PC_BUILD_DATA = {
+    categories: [
+      { id: 'cpu', name: 'Processor (CPU)', icon: 'cpu' },
+      { id: 'gpu', name: 'Graphics Card (GPU)', icon: 'monitor' },
+      { id: 'motherboard', name: 'Motherboard', icon: 'grid' },
+      { id: 'ram', name: 'Memory (RAM)', icon: 'layers' },
+      { id: 'storage', name: 'Storage (NVMe SSD)', icon: 'hard-drive' },
+      { id: 'psu', name: 'Power Supply (PSU)', icon: 'zap' },
+      { id: 'case', name: 'Chassis / Case', icon: 'box' },
+      { id: 'cooler', name: 'CPU Cooler', icon: 'wind' }
+    ],
+
+    components: {
+      cpu: [
+        {
+          id: 'cpu-budget',
+          name: 'AMD Ryzen 5 5600',
+          price: 135,
+          wattage: 65,
+          score: 65,
+          stockStatus: 'in_stock',
+          stockQuantity: 14,
+          specs: { cores: '6 Cores / 12 Threads', clock: '4.4 GHz Boost', socket: 'AM4', cache: '35MB' }
+        },
+        {
+          id: 'cpu-gaming',
+          name: 'AMD Ryzen 7 7800X3D',
+          price: 389,
+          wattage: 120,
+          score: 95,
+          stockStatus: 'in_stock',
+          stockQuantity: 8,
+          specs: { cores: '8 Cores / 16 Threads', clock: '5.0 GHz Boost', socket: 'AM5', cache: '104MB 3D V-Cache' }
+        },
+        {
+          id: 'cpu-intel-mid',
+          name: 'Intel Core i5-14600K',
+          price: 295,
+          wattage: 125,
+          score: 85,
+          stockStatus: 'low_stock',
+          stockQuantity: 2,
+          specs: { cores: '14 Cores (6P + 8E)', clock: '5.3 GHz Boost', socket: 'LGA1700', cache: '24MB' }
+        },
+        {
+          id: 'cpu-intel-i7',
+          name: 'Intel Core i7-14700K',
+          price: 399,
+          wattage: 200,
+          score: 92,
+          stockStatus: 'in_stock',
+          stockQuantity: 6,
+          specs: { cores: '20 Cores (8P + 12E)', clock: '5.6 GHz Boost', socket: 'LGA1700', cache: '33MB' }
+        },
+        {
+          id: 'cpu-amd-7950x3d',
+          name: 'AMD Ryzen 9 7950X3D',
+          price: 649,
+          wattage: 162,
+          score: 99,
+          stockStatus: 'in_stock',
+          stockQuantity: 4,
+          specs: { cores: '16 Cores / 32 Threads', clock: '5.7 GHz Boost', socket: 'AM5', cache: '144MB 3D V-Cache' }
+        },
+        {
+          id: 'cpu-enthusiast',
+          name: 'Intel Core i9-14900K',
+          price: 549,
+          wattage: 253,
+          score: 98,
+          stockStatus: 'in_stock',
+          stockQuantity: 5,
+          specs: { cores: '24 Cores (8P + 16E)', clock: '6.0 GHz Boost', socket: 'LGA1700', cache: '36MB' }
+        },
+        {
+          id: 'cpu-workstation',
+          name: 'AMD Ryzen Threadripper 7970X',
+          price: 2499,
+          wattage: 350,
+          score: 100,
+          stockStatus: 'out_of_stock',
+          stockQuantity: 0,
+          specs: { cores: '32 Cores / 64 Threads', clock: '5.3 GHz Boost', socket: 'sTR5', cache: '128MB' }
+        }
+      ],
+
+      gpu: [
+        {
+          id: 'gpu-budget',
+          name: 'NVIDIA GeForce RTX 4060 8GB',
+          price: 299,
+          wattage: 115,
+          score: 62,
+          stockStatus: 'in_stock',
+          stockQuantity: 12,
+          specs: { vram: '8GB GDDR6', bus: '128-bit', architecture: 'Ada Lovelace' }
+        },
+        {
+          id: 'gpu-amd-budget',
+          name: 'AMD Radeon RX 7600 XT 16GB',
+          price: 329,
+          wattage: 190,
+          score: 68,
+          stockStatus: 'in_stock',
+          stockQuantity: 9,
+          specs: { vram: '16GB GDDR6', bus: '128-bit', architecture: 'RDNA 3' }
+        },
+        {
+          id: 'gpu-mid',
+          name: 'NVIDIA GeForce RTX 4070 Super 12GB',
+          price: 599,
+          wattage: 220,
+          score: 84,
+          stockStatus: 'in_stock',
+          stockQuantity: 7,
+          specs: { vram: '12GB GDDR6X', bus: '192-bit', architecture: 'Ada Lovelace' }
+        },
+        {
+          id: 'gpu-4070-ti',
+          name: 'NVIDIA GeForce RTX 4070 Ti Super 16GB',
+          price: 799,
+          wattage: 285,
+          score: 90,
+          stockStatus: 'in_stock',
+          stockQuantity: 5,
+          specs: { vram: '16GB GDDR6X', bus: '256-bit', architecture: 'Ada Lovelace' }
+        },
+        {
+          id: 'gpu-amd-7900xtx',
+          name: 'AMD Radeon RX 7900 XTX 24GB',
+          price: 949,
+          wattage: 355,
+          score: 95,
+          stockStatus: 'in_stock',
+          stockQuantity: 3,
+          specs: { vram: '24GB GDDR6', bus: '384-bit', architecture: 'RDNA 3' }
+        },
+        {
+          id: 'gpu-gaming',
+          name: 'NVIDIA GeForce RTX 4080 Super 16GB',
+          price: 999,
+          wattage: 320,
+          score: 94,
+          stockStatus: 'low_stock',
+          stockQuantity: 1,
+          specs: { vram: '16GB GDDR6X', bus: '256-bit', architecture: 'Ada Lovelace' }
+        },
+        {
+          id: 'gpu-flagship',
+          name: 'NVIDIA GeForce RTX 4090 24GB',
+          price: 1799,
+          wattage: 450,
+          score: 100,
+          stockStatus: 'out_of_stock',
+          stockQuantity: 0,
+          specs: { vram: '24GB GDDR6X', bus: '384-bit', architecture: 'Ada Lovelace' }
+        }
+      ],
+
+      motherboard: [
+        {
+          id: 'mb-budget',
+          name: 'MSI PRO B650M-A WiFi Micro-ATX',
+          price: 139,
+          wattage: 25,
+          stockStatus: 'in_stock',
+          stockQuantity: 15,
+          specs: { socket: 'AM5', chipset: 'B650', formFactor: 'mATX' }
+        },
+        {
+          id: 'mb-gaming',
+          name: 'ASUS ROG Strix B650-E Gaming WiFi',
+          price: 249,
+          wattage: 30,
+          stockStatus: 'in_stock',
+          stockQuantity: 6,
+          specs: { socket: 'AM5', chipset: 'B650E', formFactor: 'ATX' }
+        },
+        {
+          id: 'mb-intel',
+          name: 'GIGABYTE Z790 AORUS Elite AX',
+          price: 239,
+          wattage: 35,
+          stockStatus: 'in_stock',
+          stockQuantity: 4,
+          specs: { socket: 'LGA1700', chipset: 'Z790', formFactor: 'ATX' }
+        },
+        {
+          id: 'mb-itx',
+          name: 'ASUS ROG Strix X670E-I Gaming ITX',
+          price: 439,
+          wattage: 32,
+          stockStatus: 'in_stock',
+          stockQuantity: 3,
+          specs: { socket: 'AM5', chipset: 'X670E', formFactor: 'Mini-ITX' }
+        },
+        {
+          id: 'mb-workstation',
+          name: 'ASRock WRX90 WS EVO Workstation',
+          price: 899,
+          wattage: 65,
+          stockStatus: 'low_stock',
+          stockQuantity: 1,
+          specs: { socket: 'sTR5', chipset: 'WRX90', formFactor: 'E-ATX' }
+        }
+      ],
+
+      ram: [
+        {
+          id: 'ram-16gb',
+          name: 'Corsair Vengeance LPX 16GB (2x8GB) DDR4-3600',
+          price: 49,
+          wattage: 10,
+          stockStatus: 'in_stock',
+          stockQuantity: 20,
+          specs: { capacity: '16GB', speed: '3600 MHz', type: 'DDR4' }
+        },
+        {
+          id: 'ram-32gb',
+          name: 'G.Skill Flare X5 32GB (2x16GB) DDR5-6000',
+          price: 109,
+          wattage: 12,
+          stockStatus: 'in_stock',
+          stockQuantity: 11,
+          specs: { capacity: '32GB', speed: '6000 MHz', type: 'DDR5' }
+        },
+        {
+          id: 'ram-64gb',
+          name: 'Corsair Vengeance RGB 64GB (2x32GB) DDR5-6400',
+          price: 219,
+          wattage: 18,
+          stockStatus: 'in_stock',
+          stockQuantity: 5,
+          specs: { capacity: '64GB', speed: '6400 MHz', type: 'DDR5' }
+        },
+        {
+          id: 'ram-128gb',
+          name: 'Kingston Fury Renegade 128GB (4x32GB) DDR5-5600 ECC',
+          price: 549,
+          wattage: 28,
+          stockStatus: 'low_stock',
+          stockQuantity: 2,
+          specs: { capacity: '128GB', speed: '5600 MHz', type: 'DDR5 ECC' }
+        }
+      ],
+
+      storage: [
+        {
+          id: 'ssd-1tb-gen4',
+          name: 'Crucial P3 Plus 1TB PCIe 4.0 NVMe M.2',
+          price: 69,
+          wattage: 6,
+          stockStatus: 'in_stock',
+          stockQuantity: 18,
+          specs: { capacity: '1TB', readSpeed: '5000 MB/s', interface: 'PCIe 4.0' }
+        },
+        {
+          id: 'ssd-2tb-gen4',
+          name: 'Samsung 990 PRO 2TB PCIe 4.0 NVMe M.2',
+          price: 169,
+          wattage: 8,
+          stockStatus: 'in_stock',
+          stockQuantity: 10,
+          specs: { capacity: '2TB', readSpeed: '7450 MB/s', interface: 'PCIe 4.0' }
+        },
+        {
+          id: 'ssd-4tb-gen4',
+          name: 'WD_BLACK SN850X 4TB Gaming NVMe SSD',
+          price: 299,
+          wattage: 9,
+          stockStatus: 'in_stock',
+          stockQuantity: 4,
+          specs: { capacity: '4TB', readSpeed: '7300 MB/s', interface: 'PCIe 4.0' }
+        },
+        {
+          id: 'ssd-2tb-gen5',
+          name: 'Crucial T700 2TB PCIe 5.0 NVMe M.2 with Heatsink',
+          price: 279,
+          wattage: 12,
+          stockStatus: 'low_stock',
+          stockQuantity: 1,
+          specs: { capacity: '2TB', readSpeed: '12400 MB/s', interface: 'PCIe 5.0' }
+        }
+      ],
+
+      psu: [
+        {
+          id: 'psu-650w',
+          name: 'CORSAIR CX650M 650W 80+ Bronze Semi-Modular',
+          price: 69,
+          capacityWattage: 650,
+          stockStatus: 'in_stock',
+          stockQuantity: 14,
+          specs: { wattage: '650W', efficiency: '80+ Bronze' }
+        },
+        {
+          id: 'psu-750w',
+          name: 'Seasonic Focus GX-750 750W 80+ Gold Full Modular',
+          price: 109,
+          capacityWattage: 750,
+          stockStatus: 'in_stock',
+          stockQuantity: 9,
+          specs: { wattage: '750W', efficiency: '80+ Gold' }
+        },
+        {
+          id: 'psu-850w',
+          name: 'Corsair RM850x 850W 80+ Gold ATX 3.0 PCIe 5.0',
+          price: 139,
+          capacityWattage: 850,
+          stockStatus: 'in_stock',
+          stockQuantity: 6,
+          specs: { wattage: '850W', efficiency: '80+ Gold' }
+        },
+        {
+          id: 'psu-1200w',
+          name: 'be quiet! Dark Power Pro 13 1200W 80+ Titanium',
+          price: 349,
+          capacityWattage: 1200,
+          stockStatus: 'low_stock',
+          stockQuantity: 2,
+          specs: { wattage: '1200W', efficiency: '80+ Titanium' }
+        }
+      ],
+
+      case: [
+        {
+          id: 'case-budget',
+          name: 'Montech AIR 903 MAX Mid-Tower (Black)',
+          price: 75,
+          stockStatus: 'in_stock',
+          stockQuantity: 10,
+          specs: { formFactor: 'ATX Mid-Tower', fansIncluded: '4x 140mm' }
+        },
+        {
+          id: 'case-gaming',
+          name: 'NZXT H6 Flow Dual-Chamber Compact Mid-Tower',
+          price: 109,
+          stockStatus: 'in_stock',
+          stockQuantity: 7,
+          specs: { formFactor: 'ATX Mid-Tower', style: 'Panoramic Glass' }
+        },
+        {
+          id: 'case-stealth',
+          name: 'Fractal Design North Charcoal Dark TG',
+          price: 139,
+          stockStatus: 'in_stock',
+          stockQuantity: 5,
+          specs: { formFactor: 'ATX Mid-Tower', frontPanel: 'Real Walnut Wood' }
+        },
+        {
+          id: 'case-enthusiast',
+          name: 'Lian Li O11 Dynamic EVO XL Full Tower',
+          price: 229,
+          stockStatus: 'in_stock',
+          stockQuantity: 3,
+          specs: { formFactor: 'E-ATX Full Tower' }
+        }
+      ],
+
+      cooler: [
+        {
+          id: 'cooler-air-budget',
+          name: 'Thermalright Peerless Assassin 120 SE Air Cooler',
+          price: 36,
+          wattage: 5,
+          stockStatus: 'in_stock',
+          stockQuantity: 16,
+          specs: { type: 'Dual-Tower Air', tdpRating: '245W TDP' }
+        },
+        {
+          id: 'cooler-aio-240',
+          name: 'DeepCool LS520 SE 240mm Liquid CPU Cooler',
+          price: 89,
+          wattage: 10,
+          stockStatus: 'in_stock',
+          stockQuantity: 8,
+          specs: { type: '240mm AIO Liquid' }
+        },
+        {
+          id: 'cooler-aio-360',
+          name: 'ARCTIC Liquid Freezer III 360 A-RGB Liquid Cooler',
+          price: 139,
+          wattage: 14,
+          stockStatus: 'in_stock',
+          stockQuantity: 4,
+          specs: { type: '360mm AIO Liquid' }
+        },
+        {
+          id: 'cooler-aio-lcd',
+          name: 'Corsair iCUE LINK H150i LCD 360mm Liquid Cooler',
+          price: 289,
+          wattage: 22,
+          stockStatus: 'low_stock',
+          stockQuantity: 2,
+          specs: { type: '360mm Premium Liquid', display: '2.1 IPS Screen' }
+        }
+      ]
+    },
+
+    buildTemplates: [
+      {
+        id: 'build-budget-val',
+        name: 'CyberBudget Entry V1',
+        tier: 'budget',
+        tierLabel: 'Budget Tier',
+        tag: 'Entry Gaming & Dev',
+        description: 'High price-to-performance ratio for 1080p gaming, daily coding tasks, and web browsing.',
+        components: {
+          cpu: 'cpu-budget',
+          gpu: 'gpu-budget',
+          motherboard: 'mb-budget',
+          ram: 'ram-16gb',
+          storage: 'ssd-1tb-gen4',
+          psu: 'psu-650w',
+          case: 'case-budget',
+          cooler: 'cooler-air-budget'
+        },
+        totalPrice: 871,
+        totalWattage: 226,
+        performanceScore: 65
+      },
+      {
+        id: 'build-budget-itx',
+        name: 'Esports Stealth LAN Box',
+        tier: 'budget',
+        tierLabel: 'Budget Tier',
+        tag: 'Compact LAN & High FPS Esports',
+        description: 'Portable, high airflow 1080p esports gaming rig powered by Ryzen 5 5600 and RX 7600 XT 16GB.',
+        components: {
+          cpu: 'cpu-budget',
+          gpu: 'gpu-amd-budget',
+          motherboard: 'mb-budget',
+          ram: 'ram-16gb',
+          storage: 'ssd-1tb-gen4',
+          psu: 'psu-650w',
+          case: 'case-budget',
+          cooler: 'cooler-air-budget'
+        },
+        totalPrice: 901,
+        totalWattage: 301,
+        performanceScore: 68
+      },
+      {
+        id: 'build-gaming-apex',
+        name: 'Apex Gaming Rig Pro',
+        tier: 'gaming',
+        tierLabel: 'Gaming Tier',
+        tag: '144Hz 1440p Esports & AAA',
+        description: 'Powered by the 7800X3D gaming king and RTX 4070 Super for ultimate high refresh rate performance.',
+        components: {
+          cpu: 'cpu-gaming',
+          gpu: 'gpu-mid',
+          motherboard: 'mb-gaming',
+          ram: 'ram-32gb',
+          storage: 'ssd-2tb-gen4',
+          psu: 'psu-750w',
+          case: 'case-gaming',
+          cooler: 'cooler-aio-240'
+        },
+        totalPrice: 1733,
+        totalWattage: 412,
+        performanceScore: 89
+      },
+      {
+        id: 'build-gaming-vr',
+        name: 'VR & Ultrawide Battlestation',
+        tier: 'gaming',
+        tierLabel: 'Gaming Tier',
+        tag: '4K Ultrawide & PCVR Ready',
+        description: 'Core i7-14700K paired with RTX 4070 Ti Super 16GB for immersive flight simulators, VR, and AAA gaming.',
+        components: {
+          cpu: 'cpu-intel-i7',
+          gpu: 'gpu-4070-ti',
+          motherboard: 'mb-intel',
+          ram: 'ram-32gb',
+          storage: 'ssd-2tb-gen4',
+          psu: 'psu-850w',
+          case: 'case-gaming',
+          cooler: 'cooler-aio-360'
+        },
+        totalPrice: 2187,
+        totalWattage: 527,
+        performanceScore: 93
+      },
+      {
+        id: 'build-enthusiast-titan',
+        name: 'Enthusiast Cyber-Titan',
+        tier: 'enthusiast',
+        tierLabel: 'Enthusiast Tier',
+        tag: '4K Ultra & Heavy Dev Workstation',
+        description: 'Core i9-14900K and RTX 4080 Super monster built for 4K ray tracing, local LLM inferencing, and heavy compilation.',
+        components: {
+          cpu: 'cpu-enthusiast',
+          gpu: 'gpu-gaming',
+          motherboard: 'mb-intel',
+          ram: 'ram-64gb',
+          storage: 'ssd-2tb-gen5',
+          psu: 'psu-850w',
+          case: 'case-stealth',
+          cooler: 'cooler-aio-360'
+        },
+        totalPrice: 2686,
+        totalWattage: 667,
+        performanceScore: 97
+      },
+      {
+        id: 'build-creator-studio',
+        name: 'Creator 8K Video Studio Pro',
+        tier: 'enthusiast',
+        tierLabel: 'Enthusiast Tier',
+        tag: '8K RAW Video, 3D Animation & Unreal 5',
+        description: 'Ryzen 9 7950X3D with RX 7900 XTX 24GB VRAM and 64GB DDR5 for massive 3D asset rendering and multi-camera 8K editing.',
+        components: {
+          cpu: 'cpu-amd-7950x3d',
+          gpu: 'gpu-amd-7900xtx',
+          motherboard: 'mb-gaming',
+          ram: 'ram-64gb',
+          storage: 'ssd-4tb-gen4',
+          psu: 'psu-850w',
+          case: 'case-stealth',
+          cooler: 'cooler-aio-360'
+        },
+        totalPrice: 3486,
+        totalWattage: 608,
+        performanceScore: 98
+      },
+      {
+        id: 'build-workstation-ai',
+        name: 'Overkill AI & Threadripper Workstation',
+        tier: 'workstation',
+        tierLabel: 'Workstation Tier',
+        tag: 'AI/ML Training, 3D Render & Red Team Lab',
+        description: 'Threadripper 7970X paired with RTX 4090 24GB and 128GB ECC RAM for intensive deep learning and multi-VM virtualization.',
+        components: {
+          cpu: 'cpu-workstation',
+          gpu: 'gpu-flagship',
+          motherboard: 'mb-workstation',
+          ram: 'ram-128gb',
+          storage: 'ssd-4tb-gen4',
+          psu: 'psu-1200w',
+          case: 'case-enthusiast',
+          cooler: 'cooler-aio-lcd'
+        },
+        totalPrice: 6943,
+        totalWattage: 951,
+        performanceScore: 100
+      }
+    ],
+
+    orders: [
+      {
+        id: 'ord-1001',
+        customerName: 'Elena Rostova',
+        customerEmail: 'elena.rostova@cybersec.io',
+        buildTitle: 'Apex Gaming Rig Pro',
+        tier: 'gaming',
+        totalPrice: 1733,
+        orderDate: '2026-07-26',
+        status: 'In Assembly',
+        components: {
+          cpu: 'cpu-gaming',
+          gpu: 'gpu-mid',
+          motherboard: 'mb-gaming',
+          ram: 'ram-32gb',
+          storage: 'ssd-2tb-gen4',
+          psu: 'psu-750w',
+          case: 'case-gaming',
+          cooler: 'cooler-aio-240'
+        }
+      },
+      {
+        id: 'ord-1002',
+        customerName: 'Marcus Vance',
+        customerEmail: 'mvance@adversarylabs.org',
+        buildTitle: 'Red Team Multi-VM Lab Rig',
+        tier: 'enthusiast',
+        totalPrice: 2686,
+        orderDate: '2026-07-28',
+        status: 'Pending',
+        components: {
+          cpu: 'cpu-enthusiast',
+          gpu: 'gpu-gaming',
+          motherboard: 'mb-intel',
+          ram: 'ram-64gb',
+          storage: 'ssd-2tb-gen5',
+          psu: 'psu-850w',
+          case: 'case-stealth',
+          cooler: 'cooler-aio-360'
+        }
+      }
+    ]
+  };
+
+  window.PC_BUILD_DATA = PC_BUILD_DATA;
+})();
