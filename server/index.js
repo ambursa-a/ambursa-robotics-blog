@@ -17,9 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 // Mount REST API
 app.use('/api', apiRoutes);
 
-// Redirect workstation shop routes while the page is unavailable.
-app.get(['/builds', '/builds.html', '/build'], (req, res) => {
-  res.redirect(302, '/coming-soon.html');
+// Serve the workstation shop routes again.
+app.get(['/builds', '/build'], (req, res) => {
+  res.sendFile(path.join(ROOT_DIR, 'builds.html'));
 });
 
 // Serve static web application assets (HTML, CSS, JS, Images, Data)

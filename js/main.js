@@ -431,11 +431,35 @@
     const gridEl = document.getElementById('premade-builds-grid');
     const configContainer = document.getElementById('configurator-rows-container');
     const presetSelect = document.getElementById('load-preset-select');
+    const futureGridEl = document.getElementById('future-builds-grid');
+    const futureBuildsInput = document.getElementById('future-builds-input');
+    const saveFutureBuildsBtn = document.getElementById('save-future-builds-btn');
+    const resetFutureBuildsBtn = document.getElementById('reset-future-builds-btn');
+    const futureBuildsFeedback = document.getElementById('future-builds-feedback');
+    const FUTURE_DROPS_KEY = 'ambursa_future_builds';
 
-    if (!gridEl && !configContainer) return; // Not on builds.html
+    if (!gridEl && !configContainer && !futureGridEl && !futureBuildsInput) return; // Not on builds.html
 
     const data = window.PC_BUILD_DATA;
     if (!data) return;
+
+    function getFutureDrops() {
+      try {
+        const raw = localStorage.getItem(FUTURE_DROPS_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (err) {
+        console.error('Error reading future drops:', err);
+      }
+
+      return Array.isArray(data.futureDrops) ? data.futureDrops : [];
+    }
+
+    function saveFutureDrops(drops) {
+      localStorage.setItem(FUTURE_DROPS_KEY, JSON.stringify(drops));
+    }
 
     // Current configurator selection state
     let activeState = {
@@ -540,6 +564,38 @@
           </div>
         `;
         })
+        .join('');
+    }
+
+    function renderFutureDrops() {
+      if (!futureGridEl) return;
+
+      const drops = getFutureDrops();
+      if (!drops.length) {
+        futureGridEl.innerHTML = `
+          <div class="empty-state-box" style="grid-column: 1 / -1;">
+            <p>No future drops queued yet. Add some from the dashboard.</p>
+          </div>
+        `;
+        return;
+      }
+
+      futureGridEl.innerHTML = drops
+        .map((drop) => `
+          <article class="card build-card build-card--future">
+            <div>
+              <div class="build-card-top">
+                <span class="tier-badge tier-badge--workstation">${drop.status || 'Coming Soon'}</span>
+                <span class="build-card-price">$${Number(drop.price || 0).toLocaleString()}</span>
+              </div>
+              <h3 class="build-card-title">${drop.name}</h3>
+              <p class="build-card-desc">${drop.note || ''}</p>
+            </div>
+            <div class="build-card-actions">
+              <button type="button" class="btn-secondary btn-full quick-save-btn" disabled>Launching Soon</button>
+            </div>
+          </article>
+        `)
         .join('');
     }
 
@@ -845,11 +901,49 @@
       });
     }
 
+    renderFutureDrops();
+
     /* 7. Reset Configurator Button */
     const resetBtn = document.getElementById('reset-configurator-btn');
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
         loadTemplateIntoConfigurator('build-gaming-apex');
+      });
+    }
+
+    if (futureBuildsInput) {
+      futureBuildsInput.value = JSON.stringify(getFutureDrops(), null, 2);
+    }
+
+    if (saveFutureBuildsBtn && futureBuildsInput) {
+      saveFutureBuildsBtn.addEventListener('click', () => {
+        try {
+          const parsed = JSON.parse(futureBuildsInput.value);
+          if (!Array.isArray(parsed)) throw new Error('Queue must be an array');
+          saveFutureDrops(parsed);
+          renderFutureDrops();
+          if (futureBuildsFeedback) {
+            futureBuildsFeedback.textContent = 'Saved coming soon queue.';
+            futureBuildsFeedback.className = 'summary-feedback-msg is-success';
+          }
+        } catch (err) {
+          if (futureBuildsFeedback) {
+            futureBuildsFeedback.textContent = 'Invalid JSON. Use an array of objects.';
+            futureBuildsFeedback.className = 'summary-feedback-msg is-error';
+          }
+        }
+      });
+    }
+
+    if (resetFutureBuildsBtn && futureBuildsInput) {
+      resetFutureBuildsBtn.addEventListener('click', () => {
+        localStorage.removeItem(FUTURE_DROPS_KEY);
+        futureBuildsInput.value = JSON.stringify(getFutureDrops(), null, 2);
+        renderFutureDrops();
+        if (futureBuildsFeedback) {
+          futureBuildsFeedback.textContent = 'Reset coming soon queue.';
+          futureBuildsFeedback.className = 'summary-feedback-msg is-success';
+        }
       });
     }
 

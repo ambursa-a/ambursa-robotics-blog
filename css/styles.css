@@ -700,6 +700,15 @@ h4 {
   .repo-grid {
     grid-template-columns: 1fr;
   }
+
+  .storefront-hero,
+  .storefront-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .storefront-hero__metrics {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1244,6 +1253,124 @@ h4 {
 .build-card-actions {
   display: flex;
   gap: var(--space-sm);
+}
+
+.build-card--future {
+  border-style: dashed;
+}
+
+.storefront-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+.storefront-hero__copy,
+.storefront-hero__panel {
+  height: 100%;
+}
+
+.storefront-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.storefront-hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.hero-metric {
+  padding: var(--space-md);
+}
+
+.hero-metric__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.hero-metric strong {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.shop-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.shop-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: var(--space-sm);
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shop-step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.shop-step span {
+  font-family: var(--font-mono);
+  color: var(--color-accent-cyan);
+  font-weight: 600;
+}
+
+.shop-step p {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.storefront-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.storefront-strip__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.storefront-strip__item strong {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.storefront-strip__item span {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.coming-soon-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.coming-soon-input {
+  min-height: 180px;
+  resize: vertical;
+  line-height: 1.5;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
 }
 
 /* Form inputs & Configurator */

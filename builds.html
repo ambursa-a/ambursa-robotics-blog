@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Custom PC Builds & Interactive Configurator — Browse pre-configured rigs or customize your high-performance desktop with real-time price updates and compatibility checks.">
-  <title>Custom PC Builds &amp; Builder — AMBURSA</title>
+  <title>ambursa</title>
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
         <ul>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="index.html">Robotics &amp; AI Research</a></li>
-          <!-- <li><a href="builds.html" class="is-active">Hardware Workstations</a></li> -->
+          <li><a href="builds.html" class="is-active">PC Builds</a></li>
           <li><a href="index.html#about">About</a></li>
         </ul>
       </nav>
@@ -93,14 +93,46 @@
     <main class="page-main">
 
       <!-- Section: Hero Intro -->
-      <section class="content-section" style="margin-bottom: 2rem;">
-        <div class="section-header-banner">
-          <span class="badge-tag">// ROBOTICS &amp; AI HARDWARE BUILDER v2.4</span>
-          <h1 class="page-headline">Robotics &amp; AI Workstation Shop</h1>
+      <section class="content-section storefront-hero" style="margin-bottom: 2rem;">
+        <div class="section-header-banner storefront-hero__copy">
+          <span class="badge-tag">// CUSTOM PC EXPERIENCE</span>
+          <h1 class="page-headline">Build a machine that feels engineered, not assembled.</h1>
           <p class="page-lead">
-            Configure specialized workstation rigs engineered for ROS 2 physics simulations (Gazebo / Isaac Sim), PyTorch deep learning training, CUDA SLAM point cloud processing, and high-frequency CAD kinematics.
+            Choose from curated robotics, creator, and AI workstations, then tune every component in a live builder with transparent pricing, stock signals, and instant order reservation.
           </p>
+          <div class="storefront-hero__actions">
+            <a href="#premade-heading" class="btn-support btn-support--kofi">Browse Builds</a>
+            <a href="#configurator-heading" class="btn-secondary">Customize Your Rig</a>
+          </div>
+          <div class="storefront-hero__metrics">
+            <div class="hero-metric card">
+              <span class="hero-metric__label">Built For</span>
+              <strong>AI, ROS 2, Creator, Gaming</strong>
+            </div>
+            <div class="hero-metric card">
+              <span class="hero-metric__label">Order Style</span>
+              <strong>Reserve + Quote</strong>
+            </div>
+            <div class="hero-metric card">
+              <span class="hero-metric__label">Inventory</span>
+              <strong>Live stock-aware pricing</strong>
+            </div>
+          </div>
         </div>
+        <div class="storefront-hero__panel card">
+          <h2 class="widget-title" style="text-align: left; margin-bottom: 0.75rem;">Experience Flow</h2>
+          <div class="shop-steps">
+            <div class="shop-step"><span>01</span><p>Pick a curated build or start from scratch.</p></div>
+            <div class="shop-step"><span>02</span><p>Swap components and watch price, wattage, and fit update live.</p></div>
+            <div class="shop-step"><span>03</span><p>Reserve the system and receive a polished quote summary.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section storefront-strip">
+        <div class="storefront-strip__item card"><strong>Transparent pricing</strong><span>No hidden configuration math.</span></div>
+        <div class="storefront-strip__item card"><strong>Stock aware</strong><span>Out-of-stock parts are flagged instantly.</span></div>
+        <div class="storefront-strip__item card"><strong>Designed like a product launch</strong><span>Not a plain parts list.</span></div>
       </section>
 
       <!-- Section: Pre-built Configurations -->
@@ -120,6 +152,14 @@
         <div class="builds-grid" id="premade-builds-grid">
           <!-- Populated by JS from PC_BUILD_DATA -->
         </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="future-builds-heading">
+        <div class="section-title-wrapper">
+          <h2 class="section-title section-title--large" id="future-builds-heading">Coming Soon</h2>
+          <p class="section-subtext">Upcoming custom systems managed from the dashboard.</p>
+        </div>
+        <div class="builds-grid" id="future-builds-grid"></div>
       </section>
 
       <!-- Section: Interactive Configurator -->
@@ -289,7 +329,7 @@
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="index.html">Robotics &amp; AI Research</a>
         <a href="projects.html">Robotics &amp; AI Projects</a>
-        <!-- <a href="builds.html">Hardware Workstations</a> -->
+        <a href="builds.html">PC Builds</a>
         <a href="dashboard.html" style="opacity: 0.6;" title="Restricted Owner Stock & Inventory Portal">Owner Portal</a>
         <a href="mailto:hello@ambursa.com">Contact</a>
       </nav>

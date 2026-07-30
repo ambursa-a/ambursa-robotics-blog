@@ -555,6 +555,30 @@
       }
     ],
 
+    futureDrops: [
+      {
+        id: 'drop-vision-pro',
+        name: 'Vision Pro Creator Station',
+        price: 2499,
+        status: 'Preorder Soon',
+        note: 'RTX 4080 Super + 64GB DDR5 + silent airflow for mixed robotics and media pipelines.'
+      },
+      {
+        id: 'drop-swarm-node',
+        name: 'Swarm Lab Node',
+        price: 4199,
+        status: 'In Final Assembly',
+        note: 'Threadripper workstation for multi-robot simulation, data logging, and local inference.'
+      },
+      {
+        id: 'drop-edge-studio',
+        name: 'Edge AI Studio Mini',
+        price: 1399,
+        status: 'Concept',
+        note: 'Small-form-factor build for ROS 2 dev, camera calibration, and demo deployments.'
+      }
+    ],
+
     orders: [
       {
         id: 'ord-1001',
