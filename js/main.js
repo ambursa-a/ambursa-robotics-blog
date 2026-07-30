@@ -1369,6 +1369,9 @@
               body: JSON.stringify({ status: newStatus })
             });
           } catch (err) {}
+        }
+      });
+    }
 
     /* Sidebar Owner Control Buttons */
     const restockBtn = document.getElementById('admin-restock-all-btn');
@@ -1482,6 +1485,7 @@
     }
   })();
 })();
+
 
 
 
