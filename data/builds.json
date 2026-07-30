@@ -391,11 +391,11 @@
   "buildTemplates": [
     {
       "id": "build-budget-val",
-      "name": "CyberBudget Entry V1",
+      "name": "Robotics Edge Dev V1",
       "tier": "budget",
-      "tierLabel": "Budget Tier",
-      "tag": "Entry Gaming & Dev",
-      "description": "High price-to-performance ratio for 1080p gaming, daily coding tasks, and web browsing.",
+      "tierLabel": "Entry Tier",
+      "tag": "ROS 2 Node & Edge AI Prototyping",
+      "description": "High value-to-cost ratio for ROS 2 Humble node development, OpenCV camera pipelines, and light simulation.",
       "components": {
         "cpu": "cpu-budget",
         "gpu": "gpu-budget",
@@ -412,11 +412,11 @@
     },
     {
       "id": "build-budget-itx",
-      "name": "Esports Stealth LAN Box",
+      "name": "ROS 2 & Gazebo Sim Box",
       "tier": "budget",
-      "tierLabel": "Budget Tier",
-      "tag": "Compact LAN & High FPS Esports",
-      "description": "Portable, high airflow 1080p esports gaming rig powered by Ryzen 5 5600 and RX 7600 XT 16GB.",
+      "tierLabel": "Entry Tier",
+      "tag": "Gazebo Simulation & Kinematics",
+      "description": "Compact airflow desktop rig powered by Ryzen 5 5600 and RX 7600 XT 16GB VRAM for 3D physics rendering.",
       "components": {
         "cpu": "cpu-budget",
         "gpu": "gpu-amd-budget",
@@ -433,11 +433,11 @@
     },
     {
       "id": "build-gaming-apex",
-      "name": "Apex Gaming Rig Pro",
+      "name": "Vision & SLAM Rig Pro",
       "tier": "gaming",
-      "tierLabel": "Gaming Tier",
-      "tag": "144Hz 1440p Esports & AAA",
-      "description": "Powered by the 7800X3D gaming king and RTX 4070 Super for ultimate high refresh rate performance.",
+      "tierLabel": "Mid-Tier Workstation",
+      "tag": "3D LiDAR SLAM & CUDA Vision",
+      "description": "Powered by Ryzen 7 7800X3D and RTX 4070 Super 12GB for real-time point cloud registration and neural object tracking.",
       "components": {
         "cpu": "cpu-gaming",
         "gpu": "gpu-mid",
@@ -454,11 +454,11 @@
     },
     {
       "id": "build-gaming-vr",
-      "name": "VR & Ultrawide Battlestation",
+      "name": "Autonomous Drone & Flight Sim Station",
       "tier": "gaming",
-      "tierLabel": "Gaming Tier",
-      "tag": "4K Ultrawide & PCVR Ready",
-      "description": "Core i7-14700K paired with RTX 4070 Ti Super 16GB for immersive flight simulators, VR, and AAA gaming.",
+      "tierLabel": "Mid-Tier Workstation",
+      "tag": "PX4 Flight Sim & Stereo Perception",
+      "description": "Core i7-14700K paired with RTX 4070 Ti Super 16GB for multi-vehicle drone simulation and high-resolution depth mapping.",
       "components": {
         "cpu": "cpu-intel-i7",
         "gpu": "gpu-4070-ti",
@@ -475,11 +475,11 @@
     },
     {
       "id": "build-enthusiast-titan",
-      "name": "Enthusiast Cyber-Titan",
+      "name": "AI Deep Learning Cyber-Titan",
       "tier": "enthusiast",
       "tierLabel": "Enthusiast Tier",
-      "tag": "4K Ultra & Heavy Dev Workstation",
-      "description": "Core i9-14900K and RTX 4080 Super monster built for 4K ray tracing, local LLM inferencing, and heavy compilation.",
+      "tag": "PyTorch Fine-Tuning & Local LLM",
+      "description": "Core i9-14900K and RTX 4080 Super monster engineered for deep reinforcement learning, TensorRT model quantization, and local LLM inferencing.",
       "components": {
         "cpu": "cpu-enthusiast",
         "gpu": "gpu-gaming",
@@ -496,11 +496,11 @@
     },
     {
       "id": "build-creator-studio",
-      "name": "Creator 8K Video Studio Pro",
+      "name": "Creator 3D CAD & Simulation Studio",
       "tier": "enthusiast",
       "tierLabel": "Enthusiast Tier",
-      "tag": "8K RAW Video, 3D Animation & Unreal 5",
-      "description": "Ryzen 9 7950X3D with RX 7900 XTX 24GB VRAM and 64GB DDR5 for massive 3D asset rendering and multi-camera 8K editing.",
+      "tag": "NVIDIA Isaac Sim & SolidWorks CAD",
+      "description": "Ryzen 9 7950X3D with RX 7900 XTX 24GB VRAM and 64GB DDR5 for complex robot mechanical CAD modeling and Isaac Sim photorealistic environments.",
       "components": {
         "cpu": "cpu-amd-7950x3d",
         "gpu": "gpu-amd-7900xtx",
@@ -517,11 +517,11 @@
     },
     {
       "id": "build-workstation-ai",
-      "name": "Overkill AI & Threadripper Workstation",
+      "name": "Overkill Robotics Lab & Cluster Node",
       "tier": "workstation",
       "tierLabel": "Workstation Tier",
-      "tag": "AI/ML Training, 3D Render & Red Team Lab",
-      "description": "Threadripper 7970X paired with RTX 4090 24GB and 128GB ECC RAM for intensive deep learning and multi-VM virtualization.",
+      "tag": "Multi-Robot Swarm & Neural Training",
+      "description": "Threadripper 7970X paired with RTX 4090 24GB and 128GB ECC RAM for intensive swarm simulations, large vision-language-action (VLA) models, and multi-tenant lab nodes.",
       "components": {
         "cpu": "cpu-workstation",
         "gpu": "gpu-flagship",
@@ -540,9 +540,9 @@
   "orders": [
     {
       "id": "ord-1001",
-      "customerName": "Elena Rostova",
-      "customerEmail": "elena.rostova@cybersec.io",
-      "buildTitle": "Apex Gaming Rig Pro",
+      "customerName": "Dr. Aris Thorne",
+      "customerEmail": "a.thorne@roboticslab.org",
+      "buildTitle": "Vision & SLAM Rig Pro",
       "tier": "gaming",
       "totalPrice": 1733,
       "orderDate": "2026-07-26",
@@ -560,9 +560,9 @@
     },
     {
       "id": "ord-1002",
-      "customerName": "Marcus Vance",
-      "customerEmail": "mvance@adversarylabs.org",
-      "buildTitle": "Red Team Multi-VM Lab Rig",
+      "customerName": "Sora Chen",
+      "customerEmail": "schen@autonomousai.io",
+      "buildTitle": "AI Deep Learning Cyber-Titan",
       "tier": "enthusiast",
       "totalPrice": 2686,
       "orderDate": "2026-07-28",

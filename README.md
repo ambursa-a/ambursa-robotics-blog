@@ -1,6 +1,6 @@
-# AMBURSA — Red Team Research & Custom PC Builds Platform
+# AMBURSA — Robotics & Artificial Intelligence Research Platform
 
-A production-ready, dark/light themed web platform built with plain HTML5, CSS3, vanilla JavaScript, and a Node.js/Express backend API.
+A production-ready, dark/light themed web platform built with plain HTML5, CSS3, vanilla JavaScript, and a Node.js/Express backend API for **Autonomous Robotics & AI Engineering**.
 
 ---
 
@@ -24,12 +24,12 @@ ambursa-robotics-blog/
 │   ├── routes/              # Express API routers (/api/inventory, /api/orders)
 │   ├── middleware/          # Express custom middlewares
 │   └── auth/                # Authentication utility modules
-├── posts/                   # Technical blog posts & breach research articles
+├── posts/                   # Technical blog posts & robotics papers
 │   └── slam-rtos-architecture.html
-├── index.html               # Main website homepage (Breach Analysis)
-├── builds.html              # Custom PC Builds Shop & Interactive Builder Page
+├── index.html               # Main homepage (Robotics & AI Research Papers)
+├── projects.html            # Robotics & AI Engineering Projects Showcase
+├── builds.html              # Custom Robotics, AI & Edge Workstations Shop
 ├── dashboard.html           # Restricted Owner Inventory & Stock Control Dashboard
-├── projects.html            # Red Team Projects & Exploits Page
 ├── favicon.svg              # Site brand favicon
 ├── package.json             # Node.js project manifest & scripts
 ├── .env.example             # Environment variables example template
@@ -50,8 +50,9 @@ node server/index.js
 The server will start at `http://localhost:3000`.
 
 ### 2. Pages Overview
-- **Homepage**: `http://localhost:3000/index.html` — Red Team research articles & breach analysis.
-- **Custom PC Builds Shop**: `http://localhost:3000/builds.html` — Browse pre-built rigs & build custom PCs with real-time pricing/wattage calculations.
+- **Homepage**: `http://localhost:3000/index.html` — Robotics & AI research papers & systems engineering bio.
+- **Projects Showcase**: `http://localhost:3000/projects.html` — Open-source ROS 2 controllers, CUDA SLAM engine, and Edge AI vision modules.
+- **Hardware Workstations Shop**: `http://localhost:3000/builds.html` — Browse pre-built AI/Robotics workstations & configure custom rigs with real-time pricing and wattage calculations.
 - **Owner Control Dashboard**: `http://localhost:3000/dashboard.html` — Restricted Owner Portal for hardware stock management & customer order tracking.
 
 ---
@@ -63,6 +64,7 @@ The server will start at `http://localhost:3000`.
 ---
 
 ## 🛠️ Tech Stack & Design System
+- **Robotics & AI Stack**: ROS 2, PyTorch, CUDA 12, TensorRT, Gazebo, Isaac Sim, OpenCV.
 - **Frontend**: Plain HTML5, Modern Vanilla CSS3, ES6 JavaScript.
 - **Typography**: Inter (sans-serif) & JetBrains Mono (monospace).
 - **Theme**: Light & Dark mode auto-switcher with `data-theme` attribute.

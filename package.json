@@ -1,7 +1,7 @@
 {
-  "name": "ambursa-dev",
+  "name": "ambursa-robotics-ai",
   "version": "1.0.0",
-  "description": "Personal blog with GitHub OAuth contribution heatmap",
+  "description": "Robotics & Artificial Intelligence Engineering Platform & Hardware Shop",
   "type": "module",
   "scripts": {
     "start": "node server/index.js",
