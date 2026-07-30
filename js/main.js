@@ -288,40 +288,68 @@
 
   (function initThemeSwitcher() {
     const MEDIA_QUERY = window.matchMedia('(prefers-color-scheme: dark)');
+    const THEME_KEY = 'theme';
+    const VALID_THEMES = new Set(['light', 'dark', 'system']);
+
+    function readThemePreference() {
+      try {
+        return localStorage.getItem(THEME_KEY);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function writeThemePreference(preference) {
+      try {
+        localStorage.setItem(THEME_KEY, preference);
+      } catch (err) {
+        // Ignore storage write failures (private mode or restricted storage)
+      }
+    }
 
     function getSavedPreference() {
-      return localStorage.getItem('theme') || 'system';
+      const saved = readThemePreference();
+      return VALID_THEMES.has(saved) ? saved : 'system';
     }
 
     function applyTheme(preference) {
-      let effectiveTheme = preference;
-      if (preference === 'system') {
+      const normalizedPreference = VALID_THEMES.has(preference) ? preference : 'system';
+      let effectiveTheme = normalizedPreference;
+      if (normalizedPreference === 'system') {
         effectiveTheme = MEDIA_QUERY.matches ? 'dark' : 'light';
       }
 
       document.documentElement.setAttribute('data-theme', effectiveTheme);
-      document.documentElement.setAttribute('data-theme-preference', preference);
+      document.documentElement.setAttribute('data-theme-preference', normalizedPreference);
 
       // Update button state
       document.querySelectorAll('.theme-btn').forEach((btn) => {
         const val = btn.getAttribute('data-theme-val');
-        const isActive = val === preference;
+        const isActive = val === normalizedPreference;
         btn.classList.toggle('is-active', isActive);
         btn.setAttribute('aria-pressed', String(isActive));
+        btn.setAttribute('aria-checked', String(isActive));
       });
     }
 
     function setTheme(preference) {
-      localStorage.setItem('theme', preference);
-      applyTheme(preference);
+      const normalizedPreference = VALID_THEMES.has(preference) ? preference : 'system';
+      writeThemePreference(normalizedPreference);
+      applyTheme(normalizedPreference);
     }
 
     // React dynamically to OS system theme changes when set to 'system'
-    MEDIA_QUERY.addEventListener('change', () => {
+    const onSystemThemeChange = () => {
       if (getSavedPreference() === 'system') {
         applyTheme('system');
       }
-    });
+    };
+
+    if (typeof MEDIA_QUERY.addEventListener === 'function') {
+      MEDIA_QUERY.addEventListener('change', onSystemThemeChange);
+    } else if (typeof MEDIA_QUERY.addListener === 'function') {
+      MEDIA_QUERY.addListener(onSystemThemeChange);
+    }
 
     // Apply on DOM load
     applyTheme(getSavedPreference());
@@ -331,9 +359,16 @@
       const btn = e.target.closest('.theme-btn');
       if (btn) {
         const val = btn.getAttribute('data-theme-val');
-        if (val) {
+        if (val && VALID_THEMES.has(val)) {
           setTheme(val);
         }
+      }
+    });
+
+    // Keep theme in sync if preference changes in another tab/window.
+    window.addEventListener('storage', (e) => {
+      if (e.key === THEME_KEY) {
+        applyTheme(getSavedPreference());
       }
     });
   })();
