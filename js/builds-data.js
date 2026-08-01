@@ -1,5 +1,5 @@
 /**
- * Robotics & AI Hardware Workstations - Component Catalog & Pre-made Build Templates
+ * High-End PC Hardware Workstations - Component Catalog & Pre-made Build Templates
  * Loaded globally as window.PC_BUILD_DATA
  */
 
@@ -408,7 +408,7 @@
     buildTemplates: [
       {
         id: 'build-budget-val',
-        name: 'Robotics Edge Dev V1',
+        name: 'Creator Edge Dev V1',
         tier: 'budget',
         tierLabel: 'Entry Tier',
         tag: 'ROS 2 Node & Edge AI Prototyping',
@@ -534,7 +534,7 @@
       },
       {
         id: 'build-workstation-ai',
-        name: 'Overkill Robotics Lab & Cluster Node',
+        name: 'Overkill Rendering Lab & Cluster Node',
         tier: 'workstation',
         tierLabel: 'Workstation Tier',
         tag: 'Multi-Robot Swarm & Neural Training',
@@ -561,7 +561,7 @@
         name: 'Vision Pro Creator Station',
         price: 2499,
         status: 'Preorder Soon',
-        note: 'RTX 4080 Super + 64GB DDR5 + silent airflow for mixed robotics and media pipelines.'
+        note: 'RTX 4080 Super + 64GB DDR5 + silent airflow for mixed creator and media pipelines.'
       },
       {
         id: 'drop-swarm-node',
@@ -583,7 +583,7 @@
       {
         id: 'ord-1001',
         customerName: 'Dr. Aris Thorne',
-        customerEmail: 'a.thorne@roboticslab.org',
+        customerEmail: 'a.thorne@creatorlab.org',
         buildTitle: 'Vision & SLAM Rig Pro',
         tier: 'gaming',
         totalPrice: 1733,

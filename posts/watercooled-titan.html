@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Designing a real-time SLAM stack on embedded Linux — latency budgets, IPC, and RTOS partitioning.">
-  <title>Designing a Real-Time SLAM Stack — AMBURSA</title>
+    content="Project OBSIDIAN: Dual-Loop Watercooled RTX 4090 Workstation build log and thermal analysis.">
+  <title>Project OBSIDIAN Build Log — AMBURSA</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,16 +80,15 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="../index.html" class="site-logo">AMBURSA <span>// AMBURSA // EV POWERTRAIN &amp;
-          EMBEDDEDSYSTEMS</span></a>
+      <a href="../index.html" class="site-logo">AMBURSA <span>// AMBURSA // CUSTOM PC BUILDS</span></a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="../projects.html">Projects</a></li>
-          <li><a href="../index.html" class="is-active">Logs</a></li>
-          <li><a href="../index.html#open-source">Open Source</a></li>
+          <li><a href="../projects.html">Gallery</a></li>
+          <li><a href="../index.html" class="is-active">Build Logs</a></li>
+          <li><a href="../builds.html">Configurator</a></li>
           <li><a href="../index.html#about">About</a></li>
         </ul>
       </nav>
@@ -133,35 +132,43 @@
 
     <article>
       <header class="post-header">
-        <h1>Designing a Real-Time SLAM Stack on Embedded Linux</h1>
+        <h1>Project OBSIDIAN: Dual-Loop Watercooled RTX 4090 Workstation</h1>
         <p class="post-meta">March 14, 2026</p>
       </header>
 
       <div class="post-body">
+        <img src="../assets/obsidian.jpg" alt="Project OBSIDIAN Build" style="width: 100%; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid var(--color-border);">
         <p>
-          When you move SLAM from a development workstation to an embedded target, the
-          conversation shifts from algorithm accuracy to timing guarantees. Every sensor
-          callback, every IPC hop, and every memory allocation becomes a line item in your
-          latency budget.
+          When you move from standard air cooling to a custom dual-loop configuration, the
+          conversation shifts from thermal throttling to sustained maximum overclocks. Every bend,
+          every fitting, and every radiator placement becomes a line item in your thermal budget.
         </p>
 
-        <h2>Partitioning the Stack</h2>
+        <h2>Partitioning the Loops</h2>
+        <img src="../assets/obsidian_gpu.jpg" alt="RTX 4090 Waterblock" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--color-border);">
         <p>
-          I split the navigation stack into three RTOS tasks: sensor acquisition at 100 Hz,
-          fusion at 100 Hz, and planning at 20 Hz. The Linux side handles logging, diagnostics,
-          and non-critical visualization over a shared-memory ring buffer.
+          I split the thermal load into two independent loops: one for the Intel i9-14900K and
+          another for the NVIDIA RTX 4090. The system uses dual D5 pumps, ensuring adequate
+          flow rate through the high-density microfins of the EK-Quantum blocks.
+        </p>
+        <p>
+          By separating the loops, we prevent the GPU's massive 600W heat load from affecting the CPU's thermal headroom, allowing the 14900K to boost higher and longer during intensive burst workloads.
         </p>
 
-        <h2>IPC That Doesn't Surprise You</h2>
+        <h2>CNC-Machined Distro Plates</h2>
+        <img src="../assets/obsidian_detail.jpg" alt="CNC Distro Plate Close-up" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--color-border);">
         <p>
-          Message queues work well for state snapshots, but only if you enforce fixed-size
-          messages and pre-allocated pools. Dynamic allocation inside the fusion loop was
-          the source of a 3 ms jitter spike that took a week to trace.
+          Standard reservoirs work well, but for a truly engineered look, we designed a custom
+          CNC-machined distro plate. It eliminates messy tube runs and provides a clean, parallel
+          aesthetic that aligns perfectly with the motherboard's VRM heatsinks.
+        </p>
+        <p>
+          The frosted acrylic channels distribute the clear coolant precisely where it needs to go, while integrated D-RGB strips provide a subtle, diffused glow that highlights the fluid dynamics without being overwhelming.
         </p>
 
         <p>
-          The full architecture diagram and firmware repo are linked from the
-          <a href="../projects.html">Projects page</a>.
+          The full build gallery and hardware specifications are linked from the
+          <a href="../projects.html">Gallery page</a>.
         </p>
       </div>
     </article>
@@ -169,10 +176,12 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-copyright">&copy; 2026 yourname.dev. All rights reserved.</p>
+      <p class="footer-copyright">&copy; 2026 ambursa. All rights reserved.</p>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/feed.xml">RSS Feed</a>
-        <a href="mailto:hello@yourname.dev">Contact</a>
+        <a href="../index.html">Build Logs</a>
+        <a href="../projects.html">Build Gallery</a>
+        <a href="../builds.html">Configurator</a>
+        <a href="mailto:hello@ambursa.com">Contact</a>
       </nav>
     </div>
   </footer>
@@ -194,14 +203,14 @@
         <span class="newsletter-modal-badge"><span class="badge-dot"></span> Builds &amp; Updates</span>
         <h2 id="newsletter-modal-title" class="newsletter-modal-title">Stay posted on new builds and project drops</h2>
         <p id="newsletter-modal-desc" class="newsletter-modal-desc">
-          Get the newest PC build releases, robotics project updates, and AI notes directly in your inbox.
+          Get the newest PC build releases, component restocks, and hardware notes directly in your inbox.
         </p>
       </div>
       <form id="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/ambursa" method="post"
         target="popupwindow" class="newsletter-modal-form" novalidate>
         <div class="newsletter-modal-input-group">
           <input type="email" id="newsletter-email" name="email" class="newsletter-modal-input"
-            placeholder="engineer@domain.com" required aria-label="Email address" autocomplete="email">
+            placeholder="enthusiast@domain.com" required aria-label="Email address" autocomplete="email">
           <button type="submit" id="newsletter-submit" class="newsletter-modal-submit">
             Subscribe
           </button>

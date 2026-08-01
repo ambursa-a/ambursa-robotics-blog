@@ -121,7 +121,7 @@
             <span class="newsletter-modal-badge"><span class="badge-dot"></span> Builds &amp; Updates</span>
             <h2 id="newsletter-modal-title" class="newsletter-modal-title">Stay posted on new builds and project drops</h2>
             <p id="newsletter-modal-desc" class="newsletter-modal-desc">
-              Get the newest PC build releases, robotics project updates, and AI notes directly in your inbox.
+              Get the newest PC build releases, component restocks, and hardware notes directly in your inbox.
             </p>
           </div>
           <form id="newsletter-form" class="newsletter-modal-form" novalidate>
