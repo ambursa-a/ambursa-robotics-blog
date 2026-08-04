@@ -1578,7 +1578,90 @@
       renderAdminDashboard();
     }
   })();
+
+  /* ─── Portfolio Category Filter Interactivity ───────────────── */
+  (function initPortfolioFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn[data-filter]');
+    const portfolioCards = document.querySelectorAll('.portfolio-card[data-category]');
+
+    if (!filterButtons.length || !portfolioCards.length) return;
+
+    function applyFilter(filter) {
+      filterButtons.forEach((b) => {
+        if (b.getAttribute('data-filter') === filter) {
+          b.classList.add('is-active');
+        } else {
+          b.classList.remove('is-active');
+        }
+      });
+
+      portfolioCards.forEach((card) => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    }
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        applyFilter(filter);
+      });
+    });
+
+    // Check URL search param (e.g., ?filter=software)
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialFilter = urlParams.get('filter');
+    if (initialFilter) {
+      applyFilter(initialFilter);
+    }
+  })();
+
+  /* ─── Portfolio Contact Form Submission Listener ─────────────── */
+  (function initContactForm() {
+    const contactForm = document.getElementById('portfolio-contact-form');
+    const feedbackEl = document.getElementById('contact-feedback');
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const msgInput = document.getElementById('contact-message');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const msg = msgInput ? msgInput.value.trim() : '';
+
+      if (!name || !email || !msg) {
+        if (feedbackEl) {
+          feedbackEl.style.color = '#ef4444';
+          feedbackEl.textContent = 'Please fill out all fields before submitting.';
+        }
+        return;
+      }
+
+      if (feedbackEl) {
+        feedbackEl.style.color = 'var(--color-accent-green)';
+        feedbackEl.textContent = `✓ Thank you, ${name}! Your message has been sent to Faisal Ambursa.`;
+      }
+
+      contactForm.reset();
+
+      setTimeout(() => {
+        if (feedbackEl) feedbackEl.textContent = '';
+      }, 5000);
+    });
+  })();
 })();
+
 
 
 

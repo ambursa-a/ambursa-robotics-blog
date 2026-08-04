@@ -46,7 +46,10 @@
   <!-- ═══ SITE HEADER ═══ -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="site-logo">AMBURSA</a>
+      <a href="index.html" class="site-logo" style="display: flex; align-items: center; gap: 8px;">
+        <img src="assets/profile-portrait.png" alt="Ambursa Avatar" style="height: 1.8rem; width: 1.8rem; border-radius: 50%; object-fit: cover; border: 1px solid var(--color-accent-cyan);">
+        <span>AMBURSA<span style="color: var(--color-accent-cyan);">.DEV</span></span>
+      </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -54,10 +57,11 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="projects.html">Gallery</a></li>
-          <li><a href="index.html">Build Logs</a></li>
-          <li><a href="builds.html" class="is-active">Configurator</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
           <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
 

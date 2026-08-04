@@ -5,24 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="High-End PC Building & Custom Rigs — Premium watercooled systems, SFF builds, and extreme performance workstations.">
-  <title>AMBURSA — Custom PC Builds</title>
+    content="AMBURSA — Software Development, AI Automation, Creative Studio, and Marketing Technology.">
+  <title>AMBURSA — Agency & Technology Studio</title>
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml">
+  <link rel="icon" type="image/png" href="assets/profile-portrait.png">
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <script>
     (function () {
-      const saved = localStorage.getItem('theme') || 'system';
+      const saved = localStorage.getItem('theme') || 'dark';
       let applied = saved;
       if (saved === 'system') {
         applied = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -33,22 +32,14 @@
   </script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1RN2SD741"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-S1RN2SD741');
-</script>
-  
 <body>
 
   <!-- ═══ SITE HEADER ═══ -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="site-logo">AMBURSA</a>
+      <a href="index.html" class="site-logo">
+        AMBURSA
+      </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -56,160 +47,298 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="projects.html">Gallery</a></li>
-          <li><a href="index.html" class="is-active">Build Logs</a></li>
-          <li><a href="builds.html">Configurator</a></li>
-          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html" class="is-active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="portfolio.html">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="theme-switcher" role="radiogroup" aria-label="Theme preference">
         <button type="button" class="theme-btn" data-theme-val="light" title="Light mode" aria-label="Light mode">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         </button>
         <button type="button" class="theme-btn" data-theme-val="dark" title="Dark mode" aria-label="Dark mode">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <button type="button" class="theme-btn" data-theme-val="system" title="System preference"
-          aria-label="System preference">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
+        <button type="button" class="theme-btn" data-theme-val="system" title="System preference" aria-label="System preference">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
         </button>
       </div>
     </div>
   </header>
 
+  <!-- ═══ HERO SECTION ═══ -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        <span>STUDIO &amp; TECHNOLOGY LAB</span>
+      </div>
+
+      <h1 class="hero-title">
+        AMBURSA
+      </h1>
+
+      <p class="hero-subtitle">
+        Software Development • AI Automation • Creative Studio • Marketing Technology
+      </p>
+
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ MAIN CONTENT ═══ -->
   <div class="container page-layout">
 
-    <!-- Primary column: robotics & ai research, about -->
-    <main class="page-main">
+    <main class="page-main" style="grid-column: 1 / -1;">
 
-      <!-- Latest Logs / Build Logs -->
-      <section class="content-section" id="logs" aria-labelledby="logs-heading">
-        <h2 class="section-title section-title--large" id="logs-heading">Featured Build Logs</h2>
+      <!-- SERVICES SECTION -->
+      <section class="content-section" id="services">
+        <span class="badge-tag">// WHAT WE DO</span>
+        <h2 class="section-title section-title--large" style="margin-bottom: 1.25rem;">
+          Our Services
+        </h2>
 
-        <article class="blog-featured">
-          <h3><a href="posts/watercooled-titan.html">Project OBSIDIAN: Dual-Loop Watercooled RTX 4090 Workstation</a></h3>
-          <p class="post-meta">March 14, 2026</p>
-          <p class="post-excerpt">
-            A deep-dive breakdown of our latest extreme performance build. Analyzing custom liquid cooling routing, thermal performance with an Intel i9-14900K, and precision CNC-machined distro plates.
-          </p>
-          <a href="posts/watercooled-titan.html" class="read-more">Read Build Log</a>
-        </article>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-num">01</div>
+            <h3 class="service-title">Software Development</h3>
+            <p class="service-desc">Custom web applications, e-commerce engines, dashboard portals, and robust backend architectures.</p>
+          </div>
 
-        <ul class="post-list">
-          <li class="post-list-item">
-            <h4><a href="#">Project APEX: SFF Mini-ITX Travel Workstation</a>
-            </h4>
-            <p class="post-meta">February 28, 2026</p>
-            <p class="post-excerpt">Benchmarking high-density packing in a 10-liter chassis. Fitting a full-size GPU and tuning thermal limits for maximum performance without acoustic penalties.
-            </p>
-          </li>
-          <li class="post-list-item">
-            <h4><a href="#">The Ultimate Creator Rig: 128GB RAM & Threadripper</a>
-            </h4>
-            <p class="post-meta">January 19, 2026</p>
-            <p class="post-excerpt">Combining server-grade hardware for uncompromising 8K video editing workflows. Storage array configuration and memory bandwidth optimization.
-            </p>
-          </li>
-          <li class="post-list-item">
-            <h4><a href="#">Custom Sleeved Cables & Cable Management Techniques</a></h4>
-            <p class="post-meta">December 3, 2025</p>
-            <p class="post-excerpt">Designing low-profile cable routing and crafting custom-length paracord sleeved cables for an immaculate rear chamber finish.
-            </p>
-          </li>
-        </ul>
+          <div class="service-card">
+            <div class="service-num">02</div>
+            <h3 class="service-title">AI Automation</h3>
+            <p class="service-desc">AI video generation, automated marketing workflows, intelligent chat systems, and neural data processing.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-num">03</div>
+            <h3 class="service-title">Creative Studio</h3>
+            <p class="service-desc">Brand commercials, promotional reels, product launches, luxury media production, and video editing.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-num">04</div>
+            <h3 class="service-title">Marketing Technology</h3>
+            <p class="service-desc">High-converting landing pages, lead capture funnels, SEO strategy, and multi-channel campaign tech.</p>
+          </div>
+        </div>
       </section>
 
-      <!-- About the Builder -->
-      <section class="content-section" id="about" aria-labelledby="about-heading">
-        <h2 class="section-title section-title--large" id="about-heading">About the Builder</h2>
+      <!-- FEATURED PROJECTS SHOWCASE -->
+      <section class="content-section" id="projects">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="badge-tag">// SELECTED CLIENT WORK</span>
+            <h2 class="section-title section-title--large" style="margin-bottom: 0;">
+              Projects Showcase
+            </h2>
+          </div>
+          <a href="portfolio.html" class="portfolio-link" style="font-size: 0.85rem;">View All Projects &rarr;</a>
+        </div>
 
-        <p class="about-text">
-          High-End PC Builder specializing in custom liquid cooling, Small Form Factor (SFF) engineering, and extreme performance tuning. I design premium hardware systems that connect raw computational power directly to immaculate aesthetic integration and whisper-quiet thermals.
+        <div class="portfolio-grid">
+
+          <!-- Project 1 — Real Estate Agency -->
+          <article class="portfolio-card">
+            <div class="portfolio-media">
+              <img src="assets/project-software.png" alt="Prime Estates Abuja Website & Videos">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-client">Client: Prime Estates Abuja</div>
+              <h3 class="portfolio-title">Project 1 — Real Estate Agency</h3>
+              
+              <div class="deliverables-header">Deliverables:</div>
+              <ul class="deliverables-list">
+                <li class="deliverable-item">Modern business website</li>
+                <li class="deliverable-item">Property listing pages</li>
+                <li class="deliverable-item">Inquiry form</li>
+                <li class="deliverable-item">1 luxury property advertisement</li>
+                <li class="deliverable-item">2 social media promo videos</li>
+              </ul>
+
+              <div class="portfolio-footer">
+                <a href="portfolio.html#project-1" class="portfolio-link">Project Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 — Restaurant -->
+          <article class="portfolio-card">
+            <div class="portfolio-media">
+              <img src="assets/project-ai-video.png" alt="Nova Kitchen Website & Commercials">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-client">Client: Nova Kitchen</div>
+              <h3 class="portfolio-title">Project 2 — Restaurant</h3>
+
+              <div class="deliverables-header">Deliverables:</div>
+              <ul class="deliverables-list">
+                <li class="deliverable-item">Restaurant website</li>
+                <li class="deliverable-item">Online menu</li>
+                <li class="deliverable-item">Reservation system</li>
+                <li class="deliverable-item">1 brand commercial</li>
+                <li class="deliverable-item">3 food promotional reels</li>
+              </ul>
+
+              <div class="portfolio-footer">
+                <a href="portfolio.html#project-2" class="portfolio-link">Project Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 — Fashion Brand -->
+          <article class="portfolio-card">
+            <div class="portfolio-media">
+              <img src="assets/project-distributed-db.png" alt="Aurea Apparel E-Commerce & Commercials">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-client">Client: Aurea Apparel</div>
+              <h3 class="portfolio-title">Project 3 — Fashion Brand</h3>
+
+              <div class="deliverables-header">Deliverables:</div>
+              <ul class="deliverables-list">
+                <li class="deliverable-item">E-commerce website</li>
+                <li class="deliverable-item">Product pages</li>
+                <li class="deliverable-item">Checkout flow</li>
+                <li class="deliverable-item">1 collection launch commercial</li>
+                <li class="deliverable-item">2 product advertisement videos</li>
+              </ul>
+
+              <div class="portfolio-footer">
+                <a href="portfolio.html#project-3" class="portfolio-link">Project Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 — SaaS Startup -->
+          <article class="portfolio-card">
+            <div class="portfolio-media">
+              <img src="assets/project-robotics-sim.png" alt="TaskFlow AI SaaS Dashboard & Videos">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-client">Client: TaskFlow AI</div>
+              <h3 class="portfolio-title">Project 4 — SaaS Startup</h3>
+
+              <div class="deliverables-header">Deliverables:</div>
+              <ul class="deliverables-list">
+                <li class="deliverable-item">Landing page &amp; Pricing page</li>
+                <li class="deliverable-item">Blog &amp; Dashboard UI</li>
+                <li class="deliverable-item">1 product explainer video</li>
+                <li class="deliverable-item">2 feature announcement videos</li>
+              </ul>
+
+              <div class="portfolio-footer">
+                <a href="portfolio.html#project-4" class="portfolio-link">Project Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 — Construction Company -->
+          <article class="portfolio-card">
+            <div class="portfolio-media">
+              <img src="assets/project-software.png" alt="Horizon Build Corporate Site & Videos">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-client">Client: Horizon Build</div>
+              <h3 class="portfolio-title">Project 5 — Construction Company</h3>
+
+              <div class="deliverables-header">Deliverables:</div>
+              <ul class="deliverables-list">
+                <li class="deliverable-item">Corporate website &amp; Services pages</li>
+                <li class="deliverable-item">Portfolio/gallery &amp; Quote form</li>
+                <li class="deliverable-item">1 company introduction video</li>
+                <li class="deliverable-item">2 project showcase videos</li>
+              </ul>
+
+              <div class="portfolio-footer">
+                <a href="portfolio.html#project-5" class="portfolio-link">Project Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section class="content-section" id="about">
+        <span class="badge-tag">// ABOUT AMBURSA</span>
+        <h2 class="section-title section-title--large">About Us</h2>
+
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--color-text); max-width: 760px;">
+          <strong>AMBURSA</strong> is a technology and creative studio delivering end-to-end digital solutions. We combine Software Development, AI Automation, Creative Media Production, and Marketing Technology to help businesses scale and stand out.
         </p>
-
-        <h3 class="section-title">Specific Engineering Focus</h3>
-        <ul class="expertise-list">
-          <li>Custom Hardline Liquid Cooling & Distro Plate Integration</li>
-          <li>Small Form Factor (SFF) Density & Thermal Optimization</li>
-          <li>Extreme Overclocking & Memory Tuning (DDR5)</li>
-          <li>Clean Cable Management & Custom Sleeving</li>
-          <li>Premium Workstations (Threadripper, Dual RTX 4090s)</li>
-        </ul>
       </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="content-section" id="contact">
+        <span class="badge-tag">// START A PROJECT</span>
+        <h2 class="section-title section-title--large">Get In Touch</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <form id="portfolio-contact-form">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" class="form-control" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Project Details</label>
+                <textarea id="contact-message" name="message" class="form-control" placeholder="Tell us about your project requirements..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Inquiry</button>
+              <div id="contact-feedback" style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.78rem;"></div>
+            </form>
+          </div>
+
+          <div class="contact-card">
+            <h3 style="font-family: var(--font-mono); font-size: 0.95rem; color: var(--color-text-heading); margin-bottom: 0.75rem;">Direct Reach</h3>
+            <a href="mailto:ambursa.faisal@gmail.com" class="contact-channel">
+              <div class="channel-icon">@</div>
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 600;">Email</div>
+                <div style="font-size: 0.75rem; color: var(--color-text-muted);">ambursa.faisal@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://github.com" target="_blank" class="contact-channel">
+              <div class="channel-icon">GH</div>
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 600;">GitHub</div>
+                <div style="font-size: 0.75rem; color: var(--color-text-muted);">github.com/ambursa</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <!-- Sidebar: support + consulting widgets -->
-    <aside class="page-sidebar" aria-label="Sidebar">
-
-      <!-- Card 1: Custom Build Consultation -->
-      <div class="card" style="text-align: center;">
-        <h3 class="widget-title">Custom Build Consultation</h3>
-        <div class="support-buttons" style="justify-content: center; display: flex;">
-          <a href="mailto:consult@ambursa.com" class="btn-support btn-support--kofi">
-            <!-- Email SVG Icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right: 8px; width:16px; height:16px;">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            Request a Quote
-          </a>
-        </div>
-        <p class="widget-note">Looking for a truly custom one-off system? Contact us to discuss your ultimate dream PC.</p>
-      </div>
-
-      <!-- Card 2: Newsletter Signup -->
-      <div class="card" style="text-align: center;">
-        <h3 class="widget-title">Builds &amp; Store Updates</h3>
-        <p class="widget-note">Get the latest PC build releases, component restocks, and hardware updates — straight to your inbox.</p>
-        <form action="https://buttondown.com/api/emails/embed-subscribe/ambursa" method="post" target="popupwindow"
-          class="sidebar-newsletter-form" novalidate>
-          <div class="sidebar-newsletter-input-group" style="display: flex; gap: 8px; margin-top: 12px;">
-            <input type="email" name="email" class="sidebar-newsletter-input" placeholder="engineer@domain.com"
-              required aria-label="Email address" autocomplete="email" style="flex: 1; min-width: 0;">
-            <button type="submit" class="btn-support btn-support--kofi">Subscribe</button>
-          </div>
-        </form>
-      </div>
-    </aside>
   </div>
 
   <!-- ═══ SITE FOOTER ═══ -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-copyright">&copy; 2026 ambursa. All rights reserved.</p>
+      <p class="footer-copyright">&copy; 2026 AMBURSA. All rights reserved.</p>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="index.html">Build Logs</a>
-        <a href="projects.html">Build Gallery</a>
-        <a href="builds.html">Configurator</a>
-        <a href="dashboard.html" style="opacity: 0.6;" title="Restricted Owner Stock & Inventory Portal">Owner Portal</a>
-        <a href="/feed.xml">RSS Feed</a>
-        <a href="mailto:hello@ambursa.com">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
-
 </html>

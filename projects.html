@@ -5,22 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Custom PC Build Gallery — Showcase of premium watercooled systems, SFF workstations, and high-performance gaming rigs.">
-  <title>Custom PC Build Gallery — AMBURSA</title>
+    content="Projects Portfolio — Software tools, AI video pipelines, websites, and applications.">
+  <title>Projects Portfolio — Ambursa</title>
 
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="assets/profile-portrait.png">
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <script>
     (function () {
-      const saved = localStorage.getItem('theme') || 'system';
+      const saved = localStorage.getItem('theme') || 'dark';
       let applied = saved;
       if (saved === 'system') {
         applied = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -31,22 +32,15 @@
   </script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1RN2SD741"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-S1RN2SD741');
-</script>
-  
 <body>
 
   <!-- ═══ SITE HEADER ═══ -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="site-logo">AMBURSA</a>
+      <a href="index.html" class="site-logo" style="display: flex; align-items: center; gap: 8px;">
+        <img src="assets/profile-portrait.png" alt="Ambursa Avatar" style="height: 1.6rem; width: 1.6rem; border-radius: 50%; object-fit: cover;">
+        <span>AMBURSA<span style="color: var(--color-accent-cyan);">.DEV</span></span>
+      </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -54,205 +48,264 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="projects.html" class="is-active">Gallery</a></li>
-          <li><a href="index.html">Build Logs</a></li>
-          <li><a href="builds.html">Configurator</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html" class="is-active">Portfolio</a></li>
           <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="theme-switcher" role="radiogroup" aria-label="Theme preference">
         <button type="button" class="theme-btn" data-theme-val="light" title="Light mode" aria-label="Light mode">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         </button>
         <button type="button" class="theme-btn" data-theme-val="dark" title="Dark mode" aria-label="Dark mode">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <button type="button" class="theme-btn" data-theme-val="system" title="System preference"
-          aria-label="System preference">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
+        <button type="button" class="theme-btn" data-theme-val="system" title="System preference" aria-label="System preference">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
         </button>
       </div>
     </div>
   </header>
 
   <!-- ═══ MAIN CONTENT ═══ -->
-  <div class="container page-layout">
+  <div class="container page-layout" style="padding-top: 1.5rem;">
 
-    <main class="page-main">
+    <main class="page-main" style="grid-column: 1 / -1;">
 
-      <section class="content-section" aria-labelledby="projects-heading">
-        <span class="badge-tag">// HIGH-END CUSTOM RIGS</span>
-        <h2 class="section-title section-title--large" id="projects-heading" style="margin-bottom: 0.5rem;">
-          Custom PC Build Gallery
-        </h2>
-        <p style="color: var(--color-text-muted); margin-bottom: 2rem; max-width: 680px;">
-          Showcase of our premium watercooled workstations, small form factor (SFF) travel rigs, and extreme enthusiast gaming systems engineered for maximum performance.
+      <section class="content-section">
+        <span class="badge-tag">// PORTFOLIO</span>
+        <h1 class="hero-title" style="font-size: 2rem; margin-bottom: 0.25rem;">
+          Projects Showcase
+        </h1>
+        <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">
+          Explore software development projects categorized by Software, AI Videos, Websites, and Apps.
         </p>
 
-        <!-- Project Cards Stack -->
-        <div style="display: grid; gap: 1.5rem;">
+        <!-- Category Filter Bar -->
+        <div class="filter-bar">
+          <button type="button" class="filter-btn is-active" data-filter="all">All Projects</button>
+          <button type="button" class="filter-btn" data-filter="software">Software</button>
+          <button type="button" class="filter-btn" data-filter="ai-videos">AI Videos</button>
+          <button type="button" class="filter-btn" data-filter="websites">Websites</button>
+          <button type="button" class="filter-btn" data-filter="apps">Apps</button>
+        </div>
 
-          <!-- Project 1 -->
-          <div class="card" style="border-left: 4px solid var(--color-accent-blue);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 8px;">
-              <span class="badge-tag" style="background: rgba(59,130,246,0.15); color: var(--color-accent-blue); border: none;">[ DUAL-LOOP LIQUID COOLING ]</span>
-              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-muted);">Workstation</span>
-            </div>
-            <h3 style="font-family: var(--font-mono); font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--color-text-heading);">
-              Project OBSIDIAN: The 4090 Titan
-            </h3>
-            <a href="posts/watercooled-titan.html" style="display: block; margin-bottom: 1rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border);">
-              <img src="assets/obsidian.jpg" alt="Project OBSIDIAN" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-            </a>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6;">
-              A flagship dual-loop watercooled system featuring CNC-machined distro plates, hardline acrylic tubing, and push-pull radiator configurations for sustained 4K rendering and AI workloads.
-            </p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="stock-badge stock-badge--in">i9-14900K</span>
-              <span class="stock-badge stock-badge--in">RTX 4090</span>
-              <span class="stock-badge stock-badge--in">96GB DDR5</span>
-              <span class="stock-badge stock-badge--in">Custom Loop</span>
-            </div>
-          </div>
+        <!-- Project Grid Showcase -->
+        <div class="portfolio-grid" id="portfolio-items">
 
-          <!-- Project 2 -->
-          <div class="card" style="border-left: 4px solid var(--color-accent-green);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 8px;">
-              <span class="badge-tag" style="background: rgba(34,197,94,0.15); color: var(--color-accent-green); border: none;">[ SFF MINI-ITX ]</span>
-              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-muted);">Travel Rig</span>
+          <!-- Project 1: Software -->
+          <article class="portfolio-card" data-category="software">
+            <div class="portfolio-media">
+              <img src="assets/project-software.png" alt="Software Architecture Tool">
             </div>
-            <h3 style="font-family: var(--font-mono); font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--color-text-heading);">
-              Project APEX: High-Density Power
-            </h3>
-            <a href="assets/apex.jpg" target="_blank" style="display: block; margin-bottom: 1rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border);">
-              <img src="assets/apex.jpg" alt="Project APEX" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-            </a>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6;">
-              Packing an enthusiast-tier GPU and CPU into a 10.4-liter chassis. Meticulous custom cable lengths and undervolting profiles achieve near-silent operation under load.
-            </p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="stock-badge stock-badge--in">Ryzen 7 7800X3D</span>
-              <span class="stock-badge stock-badge--in">RTX 4080 Super</span>
-              <span class="stock-badge stock-badge--in">FormD T1</span>
-              <span class="stock-badge stock-badge--in">SFX-L 850W</span>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">Software</span>
+              </div>
+              <h2 class="portfolio-title">Nexus Multi-Agent Core Engine</h2>
+              <p class="portfolio-desc">
+                High-performance backend software for automated task decomposition, vector search memory, and parallel worker process execution.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Project 3 -->
-          <div class="card" style="border-left: 4px solid #a855f7;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 8px;">
-              <span class="badge-tag" style="background: rgba(168,85,247,0.15); color: #a855f7; border: none;">[ CREATOR PLATFORM ]</span>
-              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-muted);">Enterprise</span>
+          <!-- Project 2: Software -->
+          <article class="portfolio-card" data-category="software">
+            <div class="portfolio-media">
+              <img src="assets/project-distributed-db.png" alt="KubeStream Event Pipeline Engine">
             </div>
-            <h3 style="font-family: var(--font-mono); font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--color-text-heading);">
-              Project QUANTUM: Threadripper Studio
-            </h3>
-            <a href="assets/quantum.jpg" target="_blank" style="display: block; margin-bottom: 1rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border);">
-              <img src="assets/quantum.jpg" alt="Project QUANTUM" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-            </a>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6;">
-              Engineered for uncompromising 8K video editing and heavy 3D rendering. Features an enterprise storage array and 128GB of ECC memory bandwidth optimization.
-            </p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="stock-badge stock-badge--in">Threadripper 7960X</span>
-              <span class="stock-badge stock-badge--in">128GB ECC RAM</span>
-              <span class="stock-badge stock-badge--in">U.2 NVMe Storage</span>
-              <span class="stock-badge stock-badge--in">ProArt WRX90</span>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">Software</span>
+              </div>
+              <h2 class="portfolio-title">KubeStream Message Pipeline</h2>
+              <p class="portfolio-desc">
+                High-throughput distributed event streaming software processing telemetry messages with low-latency gRPC message routing.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">Go</span>
+                <span class="tech-tag">Kafka</span>
+                <span class="tech-tag">gRPC</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Project 4 -->
-          <div class="card" style="border-left: 4px solid #f97316;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 8px;">
-              <span class="badge-tag" style="background: rgba(249,115,22,0.15); color: #f97316; border: none;">[ ENTHUSIAST GAMING ]</span>
-              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-muted);">Showcase</span>
+          <!-- Project 3: AI Videos -->
+          <article class="portfolio-card" data-category="ai-videos">
+            <div class="portfolio-media">
+              <img src="assets/project-ai-video.png" alt="CineAI Video Generator">
             </div>
-            <h3 style="font-family: var(--font-mono); font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--color-text-heading);">
-              Project NEON: Zero-RGB All-White
-            </h3>
-            <a href="assets/neon.jpg" target="_blank" style="display: block; margin-bottom: 1rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border);">
-              <img src="assets/neon.jpg" alt="Project NEON" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-            </a>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6;">
-              A study in minimalist design. Stripped of all RGB lighting, focusing entirely on clean lines, white components, and a custom frosted acrylic backplate.
-            </p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="stock-badge stock-badge--in">i7-14700K</span>
-              <span class="stock-badge stock-badge--in">RTX 4070 Ti Super</span>
-              <span class="stock-badge stock-badge--in">White Sleeving</span>
-              <span class="stock-badge stock-badge--in">NZXT H9 Flow</span>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">AI Videos</span>
+              </div>
+              <h2 class="portfolio-title">CineAI Video Generator</h2>
+              <p class="portfolio-desc">
+                Neural video generator & AI animation synthesis tool with interactive timeline controls and frame interpolation.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">FFmpeg</span>
+                <span class="tech-tag">WebAssembly</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
             </div>
-          </div>
+          </article>
+
+          <!-- Project 4: AI Videos -->
+          <article class="portfolio-card" data-category="ai-videos">
+            <div class="portfolio-media">
+              <img src="assets/project-ai-agent.png" alt="AI Video Enhancer Engine">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">AI Videos</span>
+              </div>
+              <h2 class="portfolio-title">MotionFX Video Enhancer</h2>
+              <p class="portfolio-desc">
+                AI video upscaling and automated style transfer pipeline processing high-definition video frames in real time.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">CUDA</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Websites -->
+          <article class="portfolio-card" data-category="websites">
+            <div class="portfolio-media">
+              <img src="assets/project-distributed-db.png" alt="Enterprise Web Platform">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">Websites</span>
+              </div>
+              <h2 class="portfolio-title">Enterprise Web Platform</h2>
+              <p class="portfolio-desc">
+                Clean, modern corporate website with fast page speed performance, semantic SEO tags, and responsive dark aesthetics.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Websites -->
+          <article class="portfolio-card" data-category="websites">
+            <div class="portfolio-media">
+              <img src="assets/project-software.png" alt="Developer Blog & SaaS Website">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">Websites</span>
+              </div>
+              <h2 class="portfolio-title">Developer Blog & Documentation</h2>
+              <p class="portfolio-desc">
+                High-performance developer portal and tech blog site built for fast reading, RSS feeds, and clean navigation.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">Vanilla JS</span>
+                <span class="tech-tag">CSS Grid</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: Apps -->
+          <article class="portfolio-card" data-category="apps">
+            <div class="portfolio-media">
+              <img src="assets/project-robotics-sim.png" alt="OmniTrack Dashboard App">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">Apps</span>
+              </div>
+              <h2 class="portfolio-title">OmniTrack Dashboard App</h2>
+              <p class="portfolio-desc">
+                Interactive web and desktop application for real-time task management, telemetry monitoring, and data visualization.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Apps -->
+          <article class="portfolio-card" data-category="apps">
+            <div class="portfolio-media">
+              <img src="assets/project-ai-video.png" alt="RoboSim Kinematics App">
+            </div>
+            <div class="portfolio-body">
+              <div class="portfolio-tag-line">
+                <span class="portfolio-cat">Apps</span>
+              </div>
+              <h2 class="portfolio-title">RoboSim 3D App</h2>
+              <p class="portfolio-desc">
+                Web-based 3D simulation app rendered live with WebAssembly physics and WebSocket sensor telemetry.
+              </p>
+              <div class="portfolio-stack">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Three.js</span>
+                <span class="tech-tag">WebSockets</span>
+              </div>
+              <div class="portfolio-footer">
+                <a href="https://github.com" target="_blank" class="portfolio-link">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
 
     </main>
-
-    <!-- Sidebar: shared widgets -->
-    <aside class="page-sidebar" aria-label="Sidebar">
-
-      <!-- Card 1: Custom Build Consultation -->
-      <div class="card" style="text-align: center;">
-        <h3 class="widget-title">Custom Build Consultation</h3>
-        <div class="support-buttons" style="justify-content: center; display: flex;">
-          <a href="mailto:consult@ambursa.com" class="btn-support btn-support--kofi">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right: 8px; width: 18px; height: 18px;">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            Request a Quote
-          </a>
-        </div>
-        <p class="widget-note">Looking for a truly custom one-off system? Contact us to discuss your ultimate dream PC.</p>
-      </div>
-
-      <!-- Card 2: Core Component Partners -->
-      <div class="card">
-        <h3 class="widget-title">Core Component Partners</h3>
-        <ul class="tips-list">
-          <li><strong>Processors:</strong> Intel Core i9, AMD Ryzen & Threadripper</li>
-          <li><strong>Graphics:</strong> NVIDIA GeForce RTX 40-Series</li>
-          <li><strong>Cooling:</strong> EKWB, Alphacool, Noctua</li>
-        </ul>
-      </div>
-
-    </aside>
 
   </div>
 
   <!-- ═══ SITE FOOTER ═══ -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-copyright">&copy; 2026 ambursa. All rights reserved.</p>
+      <p class="footer-copyright">&copy; 2026 Faisal Ambursa. All rights reserved.</p>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="index.html">Build Logs</a>
-        <a href="projects.html">Build Gallery</a>
-        <a href="builds.html">Configurator</a>
-        <a href="dashboard.html" style="opacity: 0.6;" title="Restricted Owner Stock & Inventory Portal">Owner Portal</a>
-        <a href="mailto:hello@ambursa.com">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
-
 </html>
